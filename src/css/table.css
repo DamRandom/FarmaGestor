@@ -1,0 +1,70 @@
+/* Estilos del contenedor */
+.container {
+    background-color: var(--button-bg-color); /* Utilizar color de fondo de botón */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 var(--primary-color);
+    overflow: auto;
+    margin: 20px;
+    padding: 20px; 
+    width: fit-content;
+    min-width: 800px;
+    min-height: 400px;
+}
+
+
+.doctor-table th:last-child,
+.doctor-table td:last-child {
+  background-color: transparent;
+  border: none;
+}
+
+.full-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos de la tabla */
+.ventas-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ventas-table th,
+.ventas-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.ventas-table th {
+    background-color: var(--primary-color); /* Utilizar color primario */
+    color: white;
+}
+
+.ventas-table td {
+    background-color: #fff;
+}
+
+/* Estilos para checkbox */
+.checkboxes-flotantes {
+    text-align: center;
+}
+
+.checkbox-flotante {
+    margin: 0 auto;
+}
+
+.ventas-table th,
+.ventas-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.checkboxes-flotantes {
+    border: none !important;
+} 
+
+.columnCheckBox, .columnas-checkbox {
+    border: none !important;
+    background: transparent !important;
+}

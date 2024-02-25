@@ -1,0 +1,58 @@
+/* Estilos para los botones */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-color-light);
+    transform: scale(0.95);
+}
+
+button:active {
+    background-color: var(--primary-color);
+    transform: scale(0.95);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 40px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    transition: margin-left 0.5s ease;
+}
+
+.buttons-container button {
+    margin: 0 2rem; /* Ajusta el margen de los botones según sea necesario */
+}
+
+
+.delete-button {
+    background-color: rgb(119, 3, 3);
+}
+
+.delete-button:hover {
+    background-color: rgb(128, 39, 39);
+}
+
+.delete-button:active {
+    background-color: hsl(0, 75%, 32%);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: -10px;
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}

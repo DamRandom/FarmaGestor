@@ -1,0 +1,29 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    border: 1px solid transparent; /* Quitamos el borde por defecto */
+    background-color: rgba(0, 123, 255, 0.2); /* Azul muy pálido casi transparente */
+    color: #054aa1;
+    cursor: pointer;
+    margin: 0 2px;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+  
+  .pagination button:hover {
+    background-color: rgba(0, 123, 255, 0.4); /* Color más intenso al pasar el ratón */
+  }
+  
+  .pagination button.active {
+    background-color: #054aa1; /* Mantenemos el color azul para la página activa */
+    color: #fff;
+  }
+  
+  .pagination button.disabled {
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,160 @@
+:root {
+    --primary-color: #054aa1;
+    --secondary-color: #48BBC6;
+    --primary-color-light: #81b8e6;
+    --button-bg-color: #f2f2f2;
+    --button-text-color: #054aa1;
+}
+
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css?family=Alexandria:700|Alexandria:400');
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Alexandria';
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Alexandria';
+    font-weight: 700;
+}
+
+html {
+    font-size: 100%; /* 16px */
+}
+
+h1 {
+    font-size: 4.210rem; /* 67.36px */
+}
+
+h2 {
+    font-size: 3.158rem; /* 50.56px */
+}
+
+h3 {
+    font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+    font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+    font-size: 1.333rem; /* 21.28px */
+}
+
+small {
+    font-size: 0.750rem; /* 12px */
+}
+
+/* Diseño del cuerpo */
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('/src/assets/1background.png');
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    overflow-y: hidden;
+    backdrop-filter: blur(2px);
+}
+
+/* Cabecera */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 99.5vw;
+    z-index: 990;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+/* Pie de página */
+.footer {
+    background: #b5cfeb45;
+    position: absolute;
+    width: 100%;
+    margin-top: 5rem;
+    bottom: 0;
+    height: 100px;
+    padding: 0 3rem;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    margin-top: 25px;
+    margin-right: 40px;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #000000 !important;
+}
+
+.logo-head {
+    width: 4%;
+}
+
+.logotitulo-container {
+    display: flex;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    padding: 20px;
+    margin-top: 80px; /* Ajusta según la altura del header */
+}
+
+/* Placeholder de input */
+input::placeholder {
+    color: gray;
+    font-style: italic;
+}
+
+/* Clase de visualización nula */
+.d-none {
+    display: none;
+}
+
+.full-page {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.app-container {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a430c247.css",
+    "main.js": "/static/js/main.6b3b3885.js",
+    "static/js/787.94d08a3b.chunk.js": "/static/js/787.94d08a3b.chunk.js",
+    "static/media/1background.png": "/static/media/1background.125c013645565100cac1.png",
+    "static/media/farmagestor-card.png": "/static/media/farmagestor-card.746e9afe7f0e77e84cdf.png",
+    "static/media/Farmagestor-removebg-preview.png": "/static/media/Farmagestor-removebg-preview.b0c9e8a1e9271c285cbc.png",
+    "index.html": "/index.html",
+    "main.a430c247.css.map": "/static/css/main.a430c247.css.map",
+    "main.6b3b3885.js.map": "/static/js/main.6b3b3885.js.map",
+    "787.94d08a3b.chunk.js.map": "/static/js/787.94d08a3b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a430c247.css",
+    "static/js/main.6b3b3885.js"
+  ]
+}

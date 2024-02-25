@@ -1,0 +1,85 @@
+.delete-user-button {
+    padding: 10px 20px;
+    background-color: #d31515;
+    box-shadow: 0 10px 20px 0 #d31515b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, margin-left 0.5s; /* Agregar transición de margen */
+    margin-left: 0; /* Establecer margen inicial */
+    margin-right: 30px;
+  }
+
+.delete-user-button:hover {
+    background-color: rgb(248, 45, 45);
+}
+
+.delete-user-button:active {
+    background-color: var(--alert);
+    transform: scale(0.95);
+}
+
+.modal-delete-user-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-titulo {
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .modal-delete-user-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Agregar el efecto de fondo borroso */
+}
+
+
+.modal-delete-user {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 20px 0 var(--primary-color);
+}
+
+.modal-delete-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.delete-user-button.d-none {
+    display: none;
+  }

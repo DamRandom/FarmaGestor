@@ -1,0 +1,854 @@
+{
+    "bsMedicamentos": [
+        {
+            "Nombre": "Paracetamol",
+            "Grupo": "Analgésicos",
+            "Existencia": 100,
+            "Precio": 10,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Amoxicilina",
+            "Grupo": "Antibióticos",
+            "Existencia": 50,
+            "Precio": 20,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Omeprazol",
+            "Grupo": "Antiácidos",
+            "Existencia": 75,
+            "Precio": 15,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Ibuprofeno",
+            "Grupo": "Analgésicos",
+            "Existencia": 80,
+            "Precio": 12,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Doxiciclina",
+            "Grupo": "Antibióticos",
+            "Existencia": 40,
+            "Precio": 25,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Aspirina",
+            "Grupo": "Analgésicos",
+            "Existencia": 60,
+            "Precio": 8,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Ciprofloxacino",
+            "Grupo": "Antibióticos",
+            "Existencia": 35,
+            "Precio": 30,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Ranitidina",
+            "Grupo": "Antiácidos",
+            "Existencia": 90,
+            "Precio": 18,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Naproxeno",
+            "Grupo": "Analgésicos",
+            "Existencia": 70,
+            "Precio": 11,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Azitromicina",
+            "Grupo": "Antibióticos",
+            "Existencia": 45,
+            "Precio": 28,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Diclofenaco",
+            "Grupo": "Analgésicos",
+            "Existencia": 55,
+            "Precio": 13,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Amoxicilina/Ácido clavulánico",
+            "Grupo": "Antibióticos",
+            "Existencia": 25,
+            "Precio": 35,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Lansoprazol",
+            "Grupo": "Antiácidos",
+            "Existencia": 85,
+            "Precio": 20,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Tramadol",
+            "Grupo": "Analgésicos",
+            "Existencia": 45,
+            "Precio": 15,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Clindamicina",
+            "Grupo": "Antibióticos",
+            "Existencia": 30,
+            "Precio": 40,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Esomeprazol",
+            "Grupo": "Antiácidos",
+            "Existencia": 65,
+            "Precio": 25,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Ketorolaco",
+            "Grupo": "Analgésicos",
+            "Existencia": 40,
+            "Precio": 10,
+            "Estado": "Activo"
+        },
+        {
+            "Nombre": "Metronidazol",
+            "Grupo": "Antibióticos",
+            "Existencia": 20,
+            "Precio": 22,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Pantoprazol",
+            "Grupo": "Antiácidos",
+            "Existencia": 75,
+            "Precio": 17,
+            "Estado": "Inactivo"
+        },
+        {
+            "Nombre": "Codeína",
+            "Grupo": "Analgésicos",
+            "Existencia": 50,
+            "Precio": 14,
+            "Estado": "Activo"
+        }
+    ],
+    "bsUsuarios": [
+        {
+            "Nombre": "Juan",
+            "Apellidos": "García",
+            "Usuario": "juang",
+            "Contraseña": "123456",
+            "Rol": "Admin"
+        },
+        {
+            "Nombre": "María",
+            "Apellidos": "López",
+            "Usuario": "marial",
+            "Contraseña": "password",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Pedro",
+            "Apellidos": "Martínez",
+            "Usuario": "pedrom",
+            "Contraseña": "abc123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Ana",
+            "Apellidos": "González",
+            "Usuario": "anagonz",
+            "Contraseña": "qwerty",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Carlos",
+            "Apellidos": "Rodríguez",
+            "Usuario": "carlosr",
+            "Contraseña": "admin123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Sara",
+            "Apellidos": "Fernández",
+            "Usuario": "saraf",
+            "Contraseña": "pass1234",
+            "Rol": "Admin"
+        },
+        {
+            "Nombre": "Luis",
+            "Apellidos": "Pérez",
+            "Usuario": "luisp",
+            "Contraseña": "securepass",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Laura",
+            "Apellidos": "Díaz",
+            "Usuario": "laurad",
+            "Contraseña": "password123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Javier",
+            "Apellidos": "Ruiz",
+            "Usuario": "javierr",
+            "Contraseña": "qwerty123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Elena",
+            "Apellidos": "Sánchez",
+            "Usuario": "elenas",
+            "Contraseña": "passpass",
+            "Rol": "Admin"
+        },
+        {
+            "Nombre": "Diego",
+            "Apellidos": "Gómez",
+            "Usuario": "diegog",
+            "Contraseña": "adminadmin",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Martina",
+            "Apellidos": "Hernández",
+            "Usuario": "martinah",
+            "Contraseña": "passwordpass",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Pablo",
+            "Apellidos": "Alvarez",
+            "Usuario": "pabloa",
+            "Contraseña": "pass123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Lucía",
+            "Apellidos": "Torres",
+            "Usuario": "luciat",
+            "Contraseña": "12345678",
+            "Rol": "Admin"
+        },
+        {
+            "Nombre": "Mario",
+            "Apellidos": "Moreno",
+            "Usuario": "mariom",
+            "Contraseña": "passpass123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Carmen",
+            "Apellidos": "Jiménez",
+            "Usuario": "carmenj",
+            "Contraseña": "adminadmin123",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Antonio",
+            "Apellidos": "Romero",
+            "Usuario": "antonior",
+            "Contraseña": "qwerty1234",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Isabel",
+            "Apellidos": "Ortega",
+            "Usuario": "isabelo",
+            "Contraseña": "password1234",
+            "Rol": "Admin"
+        },
+        {
+            "Nombre": "Adrián",
+            "Apellidos": "Navarro",
+            "Usuario": "adriann",
+            "Contraseña": "pass12345",
+            "Rol": "Usuario"
+        },
+        {
+            "Nombre": "Eva",
+            "Apellidos": "Molina",
+            "Usuario": "evam",
+            "Contraseña": "adminadmin1234",
+            "Rol": "Usuario"
+        }
+    ],
+    "dbPatients": [
+        {
+            "Nombre": "Juan",
+            "Apellidos": "García",
+            "Edad": 35,
+            "CI": "1234567",
+            "Enfermedades": "Hipertensión",
+            "Medicamentos": "Losartán",
+            "Tarjetón": "8239"
+        },
+        {
+            "Nombre": "María",
+            "Apellidos": "López",
+            "Edad": 45,
+            "CI": "9876543",
+            "Enfermedades": "Diabetes",
+            "Medicamentos": "Metformina",
+            "Tarjetón": "2384"
+        },
+        {
+            "Nombre": "Pedro",
+            "Apellidos": "Martínez",
+            "Edad": 55,
+            "CI": "5678901",
+            "Enfermedades": "Asma",
+            "Medicamentos": "Salbutamol",
+            "Tarjetón": "0123"
+        },
+        {
+            "Nombre": "Sara",
+            "Apellidos": "Fernández",
+            "Edad": 30,
+            "CI": "7654321",
+            "Enfermedades": "Colesterol alto",
+            "Medicamentos": "Atorvastatina",
+            "Tarjetón": "5678"
+        },
+        {
+            "Nombre": "David",
+            "Apellidos": "Gómez",
+            "Edad": 40,
+            "CI": "5432167",
+            "Enfermedades": "Artritis",
+            "Medicamentos": "Ibuprofeno",
+            "Tarjetón": "2345"
+        },
+        {
+            "Nombre": "Laura",
+            "Apellidos": "Pérez",
+            "Edad": 25,
+            "CI": "3216789",
+            "Enfermedades": "Ansiedad",
+            "Medicamentos": "Alprazolam",
+            "Tarjetón": "7890"
+        },
+        {
+            "Nombre": "Daniel",
+            "Apellidos": "Hernández",
+            "Edad": 50,
+            "CI": "6789123",
+            "Enfermedades": "Depresión",
+            "Medicamentos": "Sertralina",
+            "Tarjetón": "3456"
+        },
+        {
+            "Nombre": "Lucía",
+            "Apellidos": "Rodríguez",
+            "Edad": 35,
+            "CI": "8912345",
+            "Enfermedades": "Alergias",
+            "Medicamentos": "Loratadina",
+            "Tarjetón": "9012"
+        },
+        {
+            "Nombre": "Carlos",
+            "Apellidos": "Gutiérrez",
+            "Edad": 60,
+            "CI": "1237890",
+            "Enfermedades": "Hipotiroidismo",
+            "Medicamentos": "Levotiroxina",
+            "Tarjetón": "4567"
+        },
+        {
+            "Nombre": "Ana",
+            "Apellidos": "Díaz",
+            "Edad": 28,
+            "CI": "2345678",
+            "Enfermedades": "Migrañas",
+            "Medicamentos": "Sumatriptán",
+            "Tarjetón": "8901"
+        },
+        {
+            "Nombre": "Alberto",
+            "Apellidos": "Sánchez",
+            "Edad": 55,
+            "CI": "3456789",
+            "Enfermedades": "Diabetes",
+            "Medicamentos": "Insulina",
+            "Tarjetón": "1234"
+        },
+        {
+            "Nombre": "Elena",
+            "Apellidos": "Martín",
+            "Edad": 32,
+            "CI": "4567890",
+            "Enfermedades": "Presión arterial alta",
+            "Medicamentos": "Enalapril",
+            "Tarjetón": "6789"
+        },
+        {
+            "Nombre": "Javier",
+            "Apellidos": "Gómez",
+            "Edad": 40,
+            "CI": "5678901",
+            "Enfermedades": "Artritis",
+            "Medicamentos": "Naproxeno",
+            "Tarjetón": "2345"
+        },
+        {
+            "Nombre": "Carmen",
+            "Apellidos": "Alvarez",
+            "Edad": 48,
+            "CI": "6789012",
+            "Enfermedades": "Osteoporosis",
+            "Medicamentos": "Calcio",
+            "Tarjetón": "7890"
+        },
+        {
+            "Nombre": "Diego",
+            "Apellidos": "Ortega",
+            "Edad": 42,
+            "CI": "7890123",
+            "Enfermedades": "Asma",
+            "Medicamentos": "Ventolin",
+            "Tarjetón": "9012"
+        },
+        {
+            "Nombre": "Isabel",
+            "Apellidos": "Romero",
+            "Edad": 38,
+            "CI": "8901234",
+            "Enfermedades": "Gastritis",
+            "Medicamentos": "Omeprazol",
+            "Tarjetón": "3456"
+        },
+        {
+            "Nombre": "Adrián",
+            "Apellidos": "Navarro",
+            "Edad": 36,
+            "CI": "9012345",
+            "Enfermedades": "Depresión",
+            "Medicamentos": "Escitalopram",
+            "Tarjetón": "5678"
+        },
+        {
+            "Nombre": "Eva",
+            "Apellidos": "Molina",
+            "Edad": 30,
+            "CI": "0123456",
+            "Enfermedades": "Ansiedad",
+            "Medicamentos": "Clonazepam",
+            "Tarjetón": "7890"
+        },
+        {
+            "Nombre": "Gabriel",
+            "Apellidos": "Guerrero",
+            "Edad": 58,
+            "CI": "7654321",
+            "Enfermedades": "Hipertensión",
+            "Medicamentos": "Amlodipino",
+            "Tarjetón": "9012"
+        },
+        {
+            "Nombre": "Ana",
+            "Apellidos": "Díaz",
+            "Edad": 28,
+            "CI": "2345678",
+            "Enfermedades": "Migrañas",
+            "Medicamentos": "Sumatriptán",
+            "Tarjetón": "8901"
+        }
+    ],
+    "dbSales": [
+        {
+            "ID Ventas": 10001,
+            "Medicamentos": "Paracetamol",
+            "Cantidad Vendida": 50,
+            "Fecha de Vencimiento": "2024-08-17",
+            "Lote": 4521,
+            "Importe": 250.75
+        },
+        {
+            "ID Ventas": 10002,
+            "Medicamentos": "Ibuprofeno",
+            "Cantidad Vendida": 30,
+            "Fecha de Vencimiento": "2024-10-22",
+            "Lote": 7896,
+            "Importe": 180.45
+        },
+        {
+            "ID Ventas": 10003,
+            "Medicamentos": "Amoxicilina",
+            "Cantidad Vendida": 20,
+            "Fecha de Vencimiento": "2024-09-03",
+            "Lote": 2365,
+            "Importe": 120.60
+        },
+        {
+            "ID Ventas": 10004,
+            "Medicamentos": "Omeprazol",
+            "Cantidad Vendida": 40,
+            "Fecha de Vencimiento": "2024-11-30",
+            "Lote": 8742,
+            "Importe": 350.20
+        },
+        {
+            "ID Ventas": 10005,
+            "Medicamentos": "Atorvastatina",
+            "Cantidad Vendida": 25,
+            "Fecha de Vencimiento": "2024-10-15",
+            "Lote": 1258,
+            "Importe": 220.35
+        },
+        {
+            "ID Ventas": 10006,
+            "Medicamentos": "Paracetamol",
+            "Cantidad Vendida": 35,
+            "Fecha de Vencimiento": "2024-09-08",
+            "Lote": 3698,
+            "Importe": 185.50
+        },
+        {
+            "ID Ventas": 10007,
+            "Medicamentos": "Ibuprofeno",
+            "Cantidad Vendida": 15,
+            "Fecha de Vencimiento": "2024-10-05",
+            "Lote": 5623,
+            "Importe": 90.25
+        },
+        {
+            "ID Ventas": 10008,
+            "Medicamentos": "Amoxicilina",
+            "Cantidad Vendida": 45,
+            "Fecha de Vencimiento": "2024-08-29",
+            "Lote": 9321,
+            "Importe": 270.80
+        },
+        {
+            "ID Ventas": 10009,
+            "Medicamentos": "Omeprazol",
+            "Cantidad Vendida": 10,
+            "Fecha de Vencimiento": "2024-12-10",
+            "Lote": 7532,
+            "Importe": 85.40
+        },
+        {
+            "ID Ventas": 10010,
+            "Medicamentos": "Atorvastatina",
+            "Cantidad Vendida": 55,
+            "Fecha de Vencimiento": "2024-09-25",
+            "Lote": 4875,
+            "Importe": 385.75
+        },
+        {
+            "ID Ventas": 10011,
+            "Medicamentos": "Paracetamol",
+            "Cantidad Vendida": 28,
+            "Fecha de Vencimiento": "2024-11-20",
+            "Lote": 6985,
+            "Importe": 140.35
+        },
+        {
+            "ID Ventas": 10012,
+            "Medicamentos": "Ibuprofeno",
+            "Cantidad Vendida": 42,
+            "Fecha de Vencimiento": "2024-09-15",
+            "Lote": 2541,
+            "Importe": 252.30
+        },
+        {
+            "ID Ventas": 10013,
+            "Medicamentos": "Amoxicilina",
+            "Cantidad Vendida": 18,
+            "Fecha de Vencimiento": "2024-10-18",
+            "Lote": 6321,
+            "Importe": 108.90
+        },
+        {
+            "ID Ventas": 10014,
+            "Medicamentos": "Omeprazol",
+            "Cantidad Vendida": 38,
+            "Fecha de Vencimiento": "2024-12-05",
+            "Lote": 3658,
+            "Importe": 342.20
+        },
+        {
+            "ID Ventas": 10015,
+            "Medicamentos": "Atorvastatina",
+            "Cantidad Vendida": 22,
+            "Fecha de Vencimiento": "2024-08-12",
+            "Lote": 8521,
+            "Importe": 165.10
+        },
+        {
+            "ID Ventas": 10016,
+            "Medicamentos": "Paracetamol",
+            "Cantidad Vendida": 33,
+            "Fecha de Vencimiento": "2024-09-29",
+            "Lote": 7542,
+            "Importe": 165.45
+        },
+        {
+            "ID Ventas": 10017,
+            "Medicamentos": "Ibuprofeno",
+            "Cantidad Vendida": 20,
+            "Fecha de Vencimiento": "2024-11-08",
+            "Lote": 6325,
+            "Importe": 120.50
+        },
+        {
+            "ID Ventas": 10018,
+            "Medicamentos": "Amoxicilina",
+            "Cantidad Vendida": 48,
+            "Fecha de Vencimiento": "2024-10-02",
+            "Lote": 4589,
+            "Importe": 258.40
+        },
+        {
+            "ID Ventas": 10019,
+            "Medicamentos": "Omeprazol",
+            "Cantidad Vendida": 12,
+            "Fecha de Vencimiento": "2024-12-15",
+            "Lote": 7541,
+            "Importe": 108.60
+        },
+        {
+            "ID Ventas": 10020,
+            "Medicamentos": "Atorvastatina",
+            "Cantidad Vendida": 25,
+            "Fecha de Vencimiento": "2024-08-25",
+            "Lote": 3654,
+            "Importe": 183.75
+        }
+    ],
+    "dbDoctores": [
+        {
+            "nombreDoctor": "Dr. Carlos",
+            "Apellidos": "González López",
+            "folioDoctor": "FOL123"
+        },
+        {
+            "nombreDoctor": "Dra. Laura",
+            "Apellidos": "Martínez Pérez",
+            "folioDoctor": "FOL456"
+        },
+        {
+            "nombreDoctor": "Dr. Alejandro",
+            "Apellidos": "Fernández Gómez",
+            "folioDoctor": "FOL789"
+        },
+        {
+            "nombreDoctor": "Dra. María",
+            "Apellidos": "Sánchez Rodríguez",
+            "folioDoctor": "FOL012"
+        },
+        {
+            "nombreDoctor": "Dr. Javier",
+            "Apellidos": "Gutiérrez Ruiz",
+            "folioDoctor": "FOL345"
+        },
+        {
+            "nombreDoctor": "Dra. Ana",
+            "Apellidos": "López Hernández",
+            "folioDoctor": "FOL678"
+        },
+        {
+            "nombreDoctor": "Dr. Miguel",
+            "Apellidos": "Pérez García",
+            "folioDoctor": "FOL901"
+        },
+        {
+            "nombreDoctor": "Dra. Paula",
+            "Apellidos": "Torres Díaz",
+            "folioDoctor": "FOL234"
+        },
+        {
+            "nombreDoctor": "Dr. Daniel",
+            "Apellidos": "Navarro Alonso",
+            "folioDoctor": "FOL567"
+        },
+        {
+            "nombreDoctor": "Dra. Sofía",
+            "Apellidos": "Jiménez Martín",
+            "folioDoctor": "FOL890"
+        },
+        {
+            "nombreDoctor": "Dr. David",
+            "Apellidos": "García Sánchez",
+            "folioDoctor": "FOL123"
+        },
+        {
+            "nombreDoctor": "Dra. Elena",
+            "Apellidos": "Martínez López",
+            "folioDoctor": "FOL456"
+        },
+        {
+            "nombreDoctor": "Dr. Jorge",
+            "Apellidos": "Hernández Pérez",
+            "folioDoctor": "FOL789"
+        },
+        {
+            "nombreDoctor": "Dra. Carla",
+            "Apellidos": "Gómez Rodríguez",
+            "folioDoctor": "FOL012"
+        },
+        {
+            "nombreDoctor": "Dr. Pablo",
+            "Apellidos": "Ruiz Gutiérrez",
+            "folioDoctor": "FOL345"
+        },
+        {
+            "nombreDoctor": "Dra. Marta",
+            "Apellidos": "Hernández Sánchez",
+            "folioDoctor": "FOL678"
+        },
+        {
+            "nombreDoctor": "Dr. Sergio",
+            "Apellidos": "García Pérez",
+            "folioDoctor": "FOL901"
+        },
+        {
+            "nombreDoctor": "Dra. Carmen",
+            "Apellidos": "González Torres",
+            "folioDoctor": "FOL234"
+        },
+        {
+            "nombreDoctor": "Dr. Andrés",
+            "Apellidos": "Martínez Navarro",
+            "folioDoctor": "FOL567"
+        },
+        {
+            "nombreDoctor": "Dra. Patricia",
+            "Apellidos": "Sánchez Jiménez",
+            "folioDoctor": "FOL890"
+        }
+    ],
+    "dbDateBook": [
+        {
+            "Nombre": "Paracetamol",
+            "Lote": "123456",
+            "Cantidad": "50",
+            "fecha_vencimiento": "2024/04/10"
+        },
+        {
+            "Nombre": "Ibuprofeno",
+            "Lote": "789012",
+            "Cantidad": "40",
+            "fecha_vencimiento": "2024/05/15"
+        },
+        {
+            "Nombre": "Amoxicilina",
+            "Lote": "345678",
+            "Cantidad": "30",
+            "fecha_vencimiento": "2024/06/20"
+        },
+        {
+            "Nombre": "Omeprazol",
+            "Lote": "901234",
+            "Cantidad": "60",
+            "fecha_vencimiento": "2024/07/25"
+        },
+        {
+            "Nombre": "Ciprofloxacino",
+            "Lote": "567890",
+            "Cantidad": "20",
+            "fecha_vencimiento": "2024/08/30"
+        },
+        {
+            "Nombre": "Loratadina",
+            "Lote": "234567",
+            "Cantidad": "70",
+            "fecha_vencimiento": "2024/09/05"
+        },
+        {
+            "Nombre": "Dexametasona",
+            "Lote": "890123",
+            "Cantidad": "25",
+            "fecha_vencimiento": "2024/10/10"
+        },
+        {
+            "Nombre": "Metformina",
+            "Lote": "456789",
+            "Cantidad": "55",
+            "fecha_vencimiento": "2024/11/15"
+        },
+        {
+            "Nombre": "Clonazepam",
+            "Lote": "012345",
+            "Cantidad": "45",
+            "fecha_vencimiento": "2024/12/20"
+        },
+        {
+            "Nombre": "Sertralina",
+            "Lote": "678901",
+            "Cantidad": "35",
+            "fecha_vencimiento": "2025/01/25"
+        },
+        {
+            "Nombre": "Cetirizina",
+            "Lote": "345678",
+            "Cantidad": "65",
+            "fecha_vencimiento": "2025/02/28"
+        },
+        {
+            "Nombre": "Atorvastatina",
+            "Lote": "901234",
+            "Cantidad": "15",
+            "fecha_vencimiento": "2025/03/05"
+        },
+        {
+            "Nombre": "Fluoxetina",
+            "Lote": "567890",
+            "Cantidad": "75",
+            "fecha_vencimiento": "2025/04/10"
+        },
+        {
+            "Nombre": "Losartan",
+            "Lote": "234567",
+            "Cantidad": "10",
+            "fecha_vencimiento": "2025/05/15"
+        },
+        {
+            "Nombre": "Rosuvastatina",
+            "Lote": "890123",
+            "Cantidad": "80",
+            "fecha_vencimiento": "2025/06/20"
+        },
+        {
+            "Nombre": "Tramadol",
+            "Lote": "456789",
+            "Cantidad": "22",
+            "fecha_vencimiento": "2025/07/25"
+        },
+        {
+            "Nombre": "Ranitidina",
+            "Lote": "012345",
+            "Cantidad": "38",
+            "fecha_vencimiento": "2025/08/30"
+        },
+        {
+            "Nombre": "Metronidazol",
+            "Lote": "678901",
+            "Cantidad": "42",
+            "fecha_vencimiento": "2025/09/05"
+        },
+        {
+            "Nombre": "Pantoprazol",
+            "Lote": "345678",
+            "Cantidad": "27",
+            "fecha_vencimiento": "2025/10/10"
+        },
+        {
+            "Nombre": "Furosemida",
+            "Lote": "901234",
+            "Cantidad": "18",
+            "fecha_vencimiento": "2025/11/15"
+        }
+    ]
+}

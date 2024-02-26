@@ -6,14 +6,14 @@ import { AuthContext } from '../auth/authContext';
 import { types } from '../types/types';
 
 export function SideBar() {
-    const [menuAbierto, setMenuAbierto] = useState(false);
-    const [modalAbierto, setModalAbierto] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     const sideBarRef = useRef(null);
 
     useEffect(() => {
         function handleClickOutside(event) {
             if (sideBarRef.current && !sideBarRef.current.contains(event.target)) {
-                setMenuAbierto(false);
+                setOpenMenu(false);
             }
         }
 
@@ -24,11 +24,11 @@ export function SideBar() {
     }, []);
 
     const handleOpenModal = () => {
-        setModalAbierto(true);
+        setOpenModal(true);
     };
 
     const handleCloseModal = () => {
-        setModalAbierto(false);
+        setOpenModal(false);
     };
 
     const handleConfirm = () => {
@@ -40,7 +40,7 @@ export function SideBar() {
     };
 
     const handleLogout = () => {
-        setModalAbierto(false);
+        setOpenModal(false);
         handleOpenModal();
     };
 
@@ -59,13 +59,12 @@ export function SideBar() {
     return (
         <>
             <button
-                className={`btnSideBar btn ${menuAbierto && "d-none"}`} onClick={() => setMenuAbierto(true)}
+                className={`btnSideBar btn ${openMenu && "d-none"}`} onClick={() => setOpenMenu(true)}
             > ≣ </button>
 
-            {/* Capa semitransparente que cubre toda la página cuando el sidebar está abierto */}
-            {menuAbierto && <div className="overlay"></div>}
+            {openMenu && <div className="overlay"></div>}
 
-            <div className={`sideBar col-md-3 p-3 ${menuAbierto ? "show" : ""}`} ref={sideBarRef}>
+            <div className={`sideBar col-md-3 p-3 ${openMenu ? "show" : ""}`} ref={sideBarRef}>
 
                 <div className='logoWeb' >
                     <img className='farmaG-card' src={card} alt="Logo" onClick={handlePrincipal} />
@@ -131,7 +130,7 @@ export function SideBar() {
                     <button className="btn-close" onClick={handleLogout}>Cerrar Sesión</button>
                 </div>
             </div>
-            {modalAbierto && (
+            {openModal && (
                 <div className="modal-cerrarSesion">
                     <div className="modal-content">
                         <h2>¿Estás seguro que deseas cerrar sesión?</h2>

@@ -12,21 +12,19 @@ import data from '../data/data.json';
 
 const DoctorManagement = () => {
 
+  const [itemList, setItemList] = useState([]);
+  const [doctorList, setDoctorList] = useState([]);
 
-
-  const [listaItems, setListaItems] = useState([]);
-  const [doctorLista, setDoctorLista] = useState([]);
-
-  const camposForm = [ //Campos del Formulario Annadir
-    { nombre: 'nombreDoctor', tipo: 'text', placeholder: 'Nombre' },
-    { nombre: 'Apellidos', tipo: 'text', placeholder: 'Apellidos' },
-    { nombre: 'folioDoctor', tipo: 'text', placeholder: 'Folio' },
+  const formFields = [
+    { name: 'nombreDoctor', type: 'text', placeholder: 'Nombre' },
+    { name: 'Apellidos', type: 'text', placeholder: 'Apellidos' },
+    { name: 'folioDoctor', type: 'text', placeholder: 'Folio' },
   ];
 
-  const [doctores, setDoctores] = useState([]);
+  const [doctors, setDoctors] = useState([]);
 
-    useEffect(() => {
-    setDoctores(data.dbDoctores);
+  useEffect(() => {
+    setDoctors(data.dbDoctors);
   },
     []);
 
@@ -65,12 +63,11 @@ const DoctorManagement = () => {
   ];
 
   const [selectedRows, setSelectedRows] = useState([]);
-  const [mostrar, setMostrar] = useState(false);
+  const [show, setShow] = useState(false);
 
-  // Manejar el cambio de checkbox
   const handleCheckboxChange = (index) => {
     setSelectedRows(selectedRows.includes(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
-    setMostrar(selectedRows.length === 0);
+    setShow(selectedRows.length === 0);
   };
 
   const handleConfirmDelete = () => {
@@ -79,33 +76,34 @@ const DoctorManagement = () => {
 
   return (
     <div className='full-page'>
-      <HeadComponent titulo='Gestionar Doctores'
-        criterio1='Nombre'
-        criterio2='Folio'
+      <HeadComponent
+        title='Gestionar Doctores'
+        criteria1='Nombre'
+        criteria2='Folio'
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Doctores</h3>
         <GenericTable
-          data={doctores
+          data={doctors
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((doctores, index) => ({
-              ...doctores,
+            .map((doctors, index) => ({
+              ...doctors,
               Acciones:
-              <div>
-                <UpdateButton
-                  itemType=""
-                  item={doctores}
-                  camposForm={camposForm}
-                />
-              </div>,
-            Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} className='checkBoxTabla' />
-          }))}
+                <div>
+                  <UpdateButton
+                    itemType=""
+                    item={doctors}
+                    formFields={formFields}
+                  />
+                </div>,
+              Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} className='checkBoxTabla' />
+            }))}
           columns={columns}
           className="doctor-table"
         />
 
         <Pagination
-          totalItems={doctores.length}
+          totalItems={doctors.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
@@ -114,19 +112,18 @@ const DoctorManagement = () => {
       <div className="buttons">
         <AddButton
           itemType="Doctor"
-          listaItems={listaItems}
-          setListaItems={setListaItems}
-          camposForm={camposForm} />
+          itemList={itemList}
+          setItemList={setItemList}
+          formFields={formFields} />
 
 
         <DeleteButton
-          objeto={doctores}
-          setObjeto={setDoctores}
-          selectedObjeto={selectedRows}
-          mostrar={mostrar}
+          item={doctors}
+          setItem={setDoctors}
+          selectedItem={selectedRows}
+          show={show}
           onConfirmDelete={handleConfirmDelete} /> {/* Pasar los doctores seleccionados y la función de confirmar eliminación */}
       </div>
-      {/* <Footer /> */}
     </div >
   );
 }

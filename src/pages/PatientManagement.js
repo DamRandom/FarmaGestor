@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { HeadComponent } from '../components/HeadComponent.js';
-import { Footer } from '../components/Footer.js';
 import GenericTable from '../components/GenericTable.js';
 import DeleteButton from '../components/DeleteButton.js';
 import AddButton from '../components/AddButton.js';
@@ -13,10 +12,10 @@ const PatientManagement = () => {
 
   useEffect(() => {
     setPatients(data.dbPatients);
-  }, []);
+  }, []);  
 
 
-  const [listaItems, setListaItems] = useState([]); // Aquí creamos las variables listaItems y setListaItems
+  const [itemList, setItemList] = useState([]);
 
   const handleConfirmDelete = () => {
     console.log('Pacientes seleccionados para eliminar:', selectedRows);
@@ -24,13 +23,13 @@ const PatientManagement = () => {
 
   
 
-  const camposForm = [
-    { nombre: 'Nombre', tipo: 'text', placeholder: 'Nombre' },
-    { nombre: 'Apellidos', tipo: 'text', placeholder: 'Apellidos' },
-    { nombre: 'Edad', tipo: 'text', placeholder: 'Edad' },
-    { nombre: 'CI', tipo: 'text', placeholder: 'CI' },
-    { nombre: 'Enfermedades', tipo: 'text', placeholder: 'Enfermedades' },
-    { nombre: 'Medicamentos', tipo: 'text', placeholder: 'Medicamentos' },
+  const formFields = [
+    { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
+    { name: 'Apellidos', type: 'text', placeholder: 'Apellidos' },
+    { name: 'Edad', type: 'text', placeholder: 'Edad' },
+    { name: 'CI', type: 'text', placeholder: 'CI' },
+    { name: 'Enfermedades', type: 'text', placeholder: 'Enfermedades' },
+    { name: 'Medicamentos', type: 'text', placeholder: 'Medicamentos' },
   ];
 
   const columns = [
@@ -57,48 +56,43 @@ const PatientManagement = () => {
     }
   ];
 
-// Estado para el número de página actual
 const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 5;
 
-// Función para manejar el cambio de página
 const handlePageChange = (page) => {
   setCurrentPage(page);
 };
 
-// Calcula los índices de los elementos a mostrar en la página actual
 const indexOfLastElement = currentPage * itemsPerPage;
 const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
 const [selectedRows, setSelectedRows] = useState([]);
-const [mostrar, setMostrar] = useState(false);
+const [show, setShow] = useState(false);
 
-
-  // Manejar el cambio de checkbox
   const handleCheckboxChange = (index) => {
     setSelectedRows(selectedRows.includes(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
-    setMostrar(selectedRows.length === 0);
+    setShow(selectedRows.length === 0);
   };
 
   return (
     <div className='full-page'>
-      <HeadComponent titulo='Pacientes con Tarjetón'
-        criterio1='Nombre'
-        criterio2='Enfermedad'
+      <HeadComponent title='Pacientes con Tarjetón'
+        criteria1='Nombre'
+        criteria2='Enfermedad'
       />
       <div className="container">
         <h3 className='titulo-tabla'>Pacientes con Tarjetón</h3>
         <GenericTable
           data={patients
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((patiens, index) => ({
-              ...patiens,
+            .map((patients, index) => ({
+              ...patients,
               Acciones:
                 <div>
                   <UpdateButton
                     itemType=""
                     item={patients}
-                    camposForm={camposForm}
+                    formFields={formFields}
                   />
                 </div>,
               Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} />
@@ -112,19 +106,20 @@ const [mostrar, setMostrar] = useState(false);
         />
       </div>
       <div className="buttons">
-        <AddButton itemType="Paciente" 
-        listaItems={listaItems} 
-        setListaItems={setListaItems} 
-        camposForm={camposForm} />
+        <AddButton 
+        itemType="Patients" 
+        itemList={itemList} 
+        setItemList={setItemList} 
+        formFields={formFields} 
+        />
 
         <DeleteButton 
-        objeto={patients} 
-        setObjeto={setPatients} 
-        selectedObjeto={selectedRows} 
-        mostrar={mostrar} 
+        item={patients} 
+        setItem={setPatients} 
+        selectedItem={selectedRows} 
+        show={show} 
         onConfirmDelete={handleConfirmDelete} />
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../css/deleteButton.css';
 
-function DeleteButton({ objeto, setObjeto, selectedObjeto }) {
+function DeleteButton({ item, setItem, selectedItem }) {
+
   // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+
   // State to control visibility of delete button
   const [buttonVisible, setButtonVisible] = useState(false);
 
   // Effect to update button visibility based on selected objects
   useEffect(() => {
-    setButtonVisible(selectedObjeto.length > 0);
-  }, [selectedObjeto]);
+    setButtonVisible(selectedItem.length > 0);
+  }, [selectedItem]);
 
   // Function to handle delete button click
   const handleDeleteClick = () => {
@@ -19,8 +21,8 @@ function DeleteButton({ objeto, setObjeto, selectedObjeto }) {
 
   // Function to confirm deletion
   const handleConfirmDelete = () => {
-    const updatedObjeto = objeto.filter((_, index) => !selectedObjeto.includes(index));
-    setObjeto(updatedObjeto);
+    const updatedObjeto = item.filter((_, index) => !selectedItem.includes(index));
+    setItem(updatedObjeto);
     setShowModal(false);
   };
 

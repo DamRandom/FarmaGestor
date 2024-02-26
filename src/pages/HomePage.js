@@ -1,12 +1,12 @@
 import React from 'react';
-import { HeadComponent } from '../HeadComponent';
-import logo from '../../assets/Farmagestor-removebg-preview.png';
-import secureIcon from '../../assets/secureIcon.png';
-import reliableIcon from '../../assets/reliableIcon.png';
-import organizedIcon from '../../assets/organizedIcon.png';
-import fastIcon from '../../assets/fastIcon.png';
-import '../../css/principal.css';
-import { Footer } from '../Footer';
+import { HeadComponent } from '../components/HeadComponent';
+import logo from '../assets/Farmagestor-removebg-preview.png';
+import secureIcon from '../assets/secureIcon.png';
+import reliableIcon from '../assets/reliableIcon.png';
+import organizedIcon from '../assets/organizedIcon.png';
+import fastIcon from '../assets/fastIcon.png';
+import '../css/principal.css';
+import { Footer } from '../components/Footer';
 
 const HomePage = () => {
     return (

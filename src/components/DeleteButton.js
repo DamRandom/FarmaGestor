@@ -2,23 +2,29 @@ import React, { useState, useEffect } from 'react';
 import '../css/deleteButton.css';
 
 function DeleteButton({ objeto, setObjeto, selectedObjeto }) {
+  // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+  // State to control visibility of delete button
   const [buttonVisible, setButtonVisible] = useState(false);
 
+  // Effect to update button visibility based on selected objects
   useEffect(() => {
     setButtonVisible(selectedObjeto.length > 0);
   }, [selectedObjeto]);
 
+  // Function to handle delete button click
   const handleDeleteClick = () => {
     setShowModal(true);
   };
 
+  // Function to confirm deletion
   const handleConfirmDelete = () => {
     const updatedObjeto = objeto.filter((_, index) => !selectedObjeto.includes(index));
     setObjeto(updatedObjeto);
     setShowModal(false);
   };
 
+  // Function to close modal
   const handleCloseModal = () => {
     setShowModal(false);
   };

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { HeadComponent } from '../HeadComponent.js';
-import { Footer } from '../Footer.js';
-import GenericTable from '../GenericTable.js';
-import DeleteButton from '../DeleteButton.js';
-import AddButton from '../AddButton.js';
-import UpdateButton from '../UpdateButton.js';
-import data from '../../data/data.json'
-import Pagination from '../Pagination.js'
+import { HeadComponent } from '../components/HeadComponent.js';
+import { Footer } from '../components/Footer.js';
+import GenericTable from '../components/GenericTable.js';
+import DeleteButton from '../components/DeleteButton.js';
+import AddButton from '../components/AddButton.js';
+import UpdateButton from '../components/UpdateButton.js';
+import data from '../data/data.json'
+import Pagination from '../components/Pagination.js'
 
 const PatientManagement = () => {
   const [patients, setPatients] = useState([]);

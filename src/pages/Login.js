@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../css/login.css';
-import logo from '../../assets/Farmagestor-removebg-preview.png';
+import '../css/login.css';
+import logo from '../assets/Farmagestor-removebg-preview.png';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../auth/authContext";
-import { types } from "../../types/types";
+import { AuthContext } from "../auth/authContext";
+import { types } from "../types/types";
 import { useForm } from 'react-hook-form';
-import '../../css/button.css'
+import '../css/button.css'
 
 function Login() {
     const navegar = useNavigate();

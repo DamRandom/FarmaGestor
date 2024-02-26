@@ -1,13 +1,12 @@
 // UserManagement.js
 import React, { useEffect, useState } from 'react';
-import { HeadComponent } from '../HeadComponent';
-import { Footer } from '../Footer';
-import GenericTable from '../GenericTable';
-import DeleteButton from '../DeleteButton';
-import AddButton from '../AddButton';
-import UpdateButton from '../UpdateButton';
-import data from '../../data/data.json'
-import Pagination from '../Pagination'
+import { HeadComponent } from '../components/HeadComponent';
+import GenericTable from '../components/GenericTable';
+import DeleteButton from '../components/DeleteButton';
+import AddButton from '../components/AddButton';
+import UpdateButton from '../components/UpdateButton';
+import data from '../data/data.json'
+import Pagination from '../components/Pagination'
 
 const DateBookManagement = () => {
 

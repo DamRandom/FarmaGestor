@@ -4,20 +4,27 @@ import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 
 function AddButton({ itemType, camposForm }) {
+  // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+  // State for notification visibility
   const [showNotification, setShowNotification] = useState(false);
-  const { register, errors, handleSubmit, reset } = useForm(); // Agregamos el reset
+  // Form management using react-hook-form
+  const { register, errors, handleSubmit, reset } = useForm();
 
+  // Effect to reset form when modal opens
   useEffect(() => {
     if (showModal) {
-      reset(); // Resetea el formulario cada vez que se abre el modal
+      reset(); // Reset the form each time modal is opened
     }
   }, [showModal, reset]);
 
+  // Function to handle form submission
   const onSubmit = handleSubmit(async data => {
-    console.log(data);
+    console.log(data); // Log form data
+    // Close modal and show notification
     setShowModal(false);
     setShowNotification(true);
+    // Hide notification after 6 seconds
     setTimeout(() => {
       setShowNotification(false);
     }, 6000);

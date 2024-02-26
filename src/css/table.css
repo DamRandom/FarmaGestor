@@ -5,6 +5,7 @@
     box-shadow: 0 10px 20px 0 var(--primary-color);
     overflow: auto;
     margin: 20px;
+    margin-top: 70px;
     padding: 20px; 
     width: fit-content;
     min-width: 800px;

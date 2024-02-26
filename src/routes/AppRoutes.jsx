@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RutasPublicas } from "./RutasPublicas";
 import { RutasPrivadas } from "./RutasPrivadas";
 import { RouterInterno } from "./RouterInterno";
-import Login from "../components/pages/Login";
+import Login from "../pages/Login";
 
 
 export const AppRouter = () => {

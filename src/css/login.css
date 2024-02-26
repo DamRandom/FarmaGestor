@@ -5,12 +5,37 @@
     --button-bg-color: #f2f2f2;
     --button-text-color: #054aa1;
 }
-/* .login-container:hover {
 
-} */
-
-body{
+body {
     backdrop-filter: blur(0px);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, rgba(101, 156, 192, 0.7), rgba(55, 89, 181, 0.6), rgba(241, 241, 255, 0.4), rgba(1, 1, 101, 0.3));
+    background-size: 240% 240%;
+    animation: gradient-animation 20s ease infinite;
+}
+
+.gradient-background {
+    background: radial-gradient(circle, rgba(101, 156, 192, 0.7), rgba(55, 89, 181, 0.6), rgba(241, 241, 255, 0.4), rgba(1, 1, 101, 0.3));
+    background-size: 240% 240%;
+    animation: gradient-animation 20s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #username {
@@ -29,11 +54,19 @@ body{
     display: flex;
     justify-content: center;
 }
-
-h2{
- font-size:xx-large;  
+.login-submit {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-top: 20px;
+    margin-left: 55px;
+  }
+  
+h2 {
+    font-size: xx-large;
 }
-#password, #username {
+
+#password,
+#username {
     padding: 10px;
     border: 1px solid #cccccc;
     border-radius: 3px;
@@ -49,7 +82,6 @@ h2{
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    
 }
 
 button:hover {
@@ -64,11 +96,15 @@ button:hover {
     margin-bottom: 30px;
 }
 
-.logo_container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
 }
+
 
 @media only screen and (max-width: 600px) {
     .login-container {
@@ -76,7 +112,6 @@ button:hover {
         max-width: 400px;
         height: auto;
         margin-top: 20px;
-
     }
 
     h2 {
@@ -97,4 +132,9 @@ button:hover {
         width: 100px;
         margin-bottom: 20px;
     }
+}
+.logo_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

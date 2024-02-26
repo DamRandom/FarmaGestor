@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { HeadComponent } from '../HeadComponent'; 
-import GenericTable from '../GenericTable';
-import '../../css/medicineManager.css';
-import AddButton from '../AddButton';
-import UpdateButton from '../UpdateButton';
-import Pagination from '../Pagination';
-import data from '../../data/data.json';
+import { HeadComponent } from '../components/HeadComponent'; 
+import GenericTable from '../components/GenericTable';
+import '../css/medicineManager.css';
+import AddButton from '../components/AddButton';
+import UpdateButton from '../components/UpdateButton';
+import Pagination from '../components/Pagination';
+import data from '../data/data.json';
 
 const MedicineManager = () => {
   const [medicamentos, setMedicamentos] = useState([]);

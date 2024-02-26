@@ -59,7 +59,6 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: url('/src/assets/1background.png');
     background-size: cover;
     padding-top: 60px;
     padding-bottom: 20px;

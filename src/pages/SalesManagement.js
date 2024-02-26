@@ -1,13 +1,12 @@
 // UserManagement.js
 import React, { useEffect, useState } from 'react';
-import { HeadComponent } from '../HeadComponent';
-import { Footer } from '../Footer';
-import GenericTable from '../GenericTable';
-import DeleteButton from '../DeleteButton';
-import AddButton from '../AddButton';
-import UpdateButton from '../UpdateButton';
-import Pagination from '../Pagination';
-import data from '../../data/data.json'
+import { HeadComponent } from '../components/HeadComponent';
+import GenericTable from '../components/GenericTable';
+import DeleteButton from '../components/DeleteButton';
+import AddButton from '../components/AddButton';
+import UpdateButton from '../components/UpdateButton';
+import Pagination from '../components/Pagination';
+import data from '../data/data.json'
 
 
 
@@ -120,7 +119,6 @@ const SalesManagement = () => {
 
         <DeleteButton objeto={ventas} setObjeto={setUsuarios} selectedObjeto={selectedRows} mostrar={mostrar} onConfirmDelete={handleConfirmDelete} /> {/* Pasar los ventas seleccionados y la función de confirmar eliminación */}
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

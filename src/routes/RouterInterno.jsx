@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import HomePage from '../components/pages/HomePage';
-import UserManagement from '../components/pages/UserManagement';
-import MedicineManager from '../components/pages/MedicineManager';
-import PatientManagement from '../components/pages/patientManagement';
-import VentasManagement from '../components/pages/SalesManagement';
-import DoctorManagement from '../components/pages/doctorManagement';
-import DateBookManagement from '../components/pages/dateBookManagement';
+import HomePage from '../pages/HomePage';
+import UserManagement from '../pages/UserManagement';
+import MedicineManager from '../pages/MedicineManager';
+import PatientManagement from '../pages/PatientManagement';
+import VentasManagement from '../pages/SalesManagement';
+import DoctorManagement from '../pages/DoctorManagement';
+import DateBookManagement from '../pages/DateBookManagement';
 
 
 

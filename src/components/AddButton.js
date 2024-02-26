@@ -3,11 +3,14 @@ import '../css/addButton.css';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 
-function AddButton({ itemType, camposForm }) {
+function AddButton({ itemType, formFields }) {
+
   // State for modal visibility
   const [showModal, setShowModal] = useState(false);
+
   // State for notification visibility
   const [showNotification, setShowNotification] = useState(false);
+
   // Form management using react-hook-form
   const { register, errors, handleSubmit, reset } = useForm();
 
@@ -21,12 +24,11 @@ function AddButton({ itemType, camposForm }) {
   // Function to handle form submission
   const onSubmit = handleSubmit(async data => {
     console.log(data); // Log form data
-    // Close modal and show notification
-    setShowModal(false);
+    setShowModal(false);  // Close modal and show notification
     setShowNotification(true);
-    // Hide notification after 6 seconds
+
     setTimeout(() => {
-      setShowNotification(false);
+      setShowNotification(false);     // Hide notification after 6 seconds
     }, 6000);
   });
 
@@ -49,15 +51,15 @@ function AddButton({ itemType, camposForm }) {
           <div className="close">Cerrar</div>
         </button>
         <form className='form' onSubmit={onSubmit}>
-          {camposForm.map((campo, index) => (
+          {formFields.map((field, index) => (
             <input
               key={index}
               className='form-inputs'
-              type={campo.tipo}
-              placeholder={campo.placeholder}
-              name={campo.nombre}
+              type={field.type}
+              placeholder={field.placeholder}
+              name={field.name}
               autoComplete='off'
-              {...register(campo.nombre, { required: true })}
+              {...register(field.name, { required: true })}
             />
           ))}
           <button className='modal-submit-addButton' type="submit"> Añadir {itemType}</button>

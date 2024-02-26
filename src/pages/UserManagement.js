@@ -10,26 +10,23 @@ import data from '../data/data.json'
 
 const UserManagement = () => {
 
-  const [listaItems, setListaItems] = useState([]);
+  const [itemList, setItemList] = useState([]);
 
-  //Datos para el modal de Añadir Usuarios
-  const camposForm = [
-    { nombre: 'Nombre', tipo: 'text', placeholder: 'Nombre' },
-    { nombre: 'Apellidos', tipo: 'text', placeholder: 'Apellido' },
-    { nombre: 'Usuario', tipo: 'text', placeholder: 'Usuario' },
-    { nombre: 'Contraseña', tipo: 'password', placeholder: 'Contraseña' },
-    { nombre: 'Rol', tipo: 'text', placeholder: 'Rol' },
+  const formFields = [
+    { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
+    { name: 'Apellidos', type: 'text', placeholder: 'Apellido' },
+    { name: 'Usuario', type: 'text', placeholder: 'Usuario' },
+    { name: 'Contraseña', type: 'password', placeholder: 'Contraseña' },
+    { name: 'Rol', type: 'text', placeholder: 'Rol' },
   ];
 
-  //Datos para simular una BD
-  const [usuarios, setUsuarios] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    setUsuarios(data.bsUsuarios);
+    setUsers(data.bsUsers);
   },
     []);
 
-  //Definir las columnas de la Tabla Generica
   const columns = [
     { header: 'Nombre', field: 'Nombre' },
     { header: 'Apellidos', field: 'Apellidos' },
@@ -44,8 +41,8 @@ const UserManagement = () => {
           <UpdateButton
             itemType="Usuario"
             item={rowData}
-            setListaItems={setUsuarios}
-            camposForm={camposForm}
+            setListaItems={setUsers}
+            camposForm={formFields}
           />
           <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
         </>
@@ -62,54 +59,50 @@ const UserManagement = () => {
     }
   ];
 
-  // Estado para el número de página actual
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Función para manejar el cambio de página
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // Calcula los índices de los elementos a mostrar en la página actual
   const indexOfLastElement = currentPage * itemsPerPage;
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
   const [selectedRows, setSelectedRows] = useState([]);
-  const [mostrar, setMostrar] = useState(false);
+  const [show, setShow] = useState(false);
 
-  // Manejar el cambio de checkbox
   const handleCheckboxChange = (index) => {
     setSelectedRows(selectedRows.includes(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
-    setMostrar(selectedRows.length === 0);
+    setShow(selectedRows.length === 0);
   };
 
   const handleConfirmDelete = () => {
     console.log('Usuarios seleccionados para eliminar:', selectedRows);
-    setSelectedRows([]); // Deseleccionar todos los checkboxes al confirmar la eliminación
+    setSelectedRows([]);
   };
   
 
   return (
 
     <div className='full-page'>
-      <HeadComponent titulo='Gestionar Usuario'
-        criterio1='Nombre'
-        criterio2='Apellido'
+      <HeadComponent title='Gestionar Usuario'
+        criteria1='Nombre'
+        criteria2='Apellido'
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Usuarios</h3>
         <GenericTable
-          data={usuarios
+          data={users
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((usuario, index) => ({
-              ...usuario,
+            .map((user, index) => ({
+              ...user,
               Acciones:
                 <div>
                   <UpdateButton
                     itemType=""
-                    item={usuario}
-                    camposForm={camposForm}
+                    item={user}
+                    formFields={formFields}
                   />
                 </div>,
               Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} />
@@ -119,7 +112,7 @@ const UserManagement = () => {
         />
 
         <Pagination
-          totalItems={usuarios.length}
+          totalItems={users.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
@@ -127,21 +120,20 @@ const UserManagement = () => {
 
       <div className="buttons">
         <AddButton
-          itemType="Usuario"
-          listaItems={listaItems}
-          setListaItems={setListaItems}
-          camposForm={camposForm}
+          itemType="Users"
+          itemList={itemList}
+          setItemList={setItemList}
+          formFields={formFields}
         />
 
         <DeleteButton
-          objeto={usuarios}
-          setObjeto={setUsuarios}
-          selectedObjeto={selectedRows}
-          mostrar={mostrar}
+          item={users}
+          setItem={setUsers}
+          selectedItem={selectedRows}
+          show={show}
           onConfirmDelete={handleConfirmDelete}
         />
       </div>
-      {/* <Footer /> */}
     </div >
   );
 }

@@ -8,33 +8,30 @@ import Pagination from '../components/Pagination';
 import data from '../data/data.json';
 
 const MedicineManager = () => {
-  const [medicamentos, setMedicamentos] = useState([]);
+  const [medicine, setMedicine] = useState([]);
 
   useEffect(() => {
-    setMedicamentos(data.bsMedicamentos); // Establece los datos cargados desde el archivo JSON
+    setMedicine(data.bsMedicine);
   }, []);
 
-  // Estado para el número de página actual
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Función para manejar el cambio de página
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // Calcula los índices de los elementos a mostrar en la página actual
   const indexOfLastElement = currentPage * itemsPerPage;
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
-  const [listaItems, setListaItems] = useState([]); // Aquí creamos las variables listaItems y setListaItems
+  const [itemList, setItemList] = useState([]); // Aquí creamos las variables itemList y setItemList
 
-  const camposForm = [
-    { nombre: 'Nombre', tipo: 'text', placeholder: 'Nombre' },
-    { nombre: 'Grupo', tipo: 'text', placeholder: 'Grupo' },
-    { nombre: 'Existencia', tipo: 'text', placeholder: 'Existencia' },
-    { nombre: 'Precio', tipo: 'text', placeholder: 'Precio' },
-    { nombre: 'Estado', tipo: 'text', placeholder: 'Estado' },
+  const formFields = [
+    { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
+    { name: 'Grupo', type: 'text', placeholder: 'Grupo' },
+    { name: 'Existencia', type: 'text', placeholder: 'Existencia' },
+    { name: 'Precio', type: 'text', placeholder: 'Precio' },
+    { name: 'Estado', type: 'text', placeholder: 'Estado' },
   ];
 
   const columns = [
@@ -55,24 +52,24 @@ const MedicineManager = () => {
   return (
     <div className="full-page">
       <HeadComponent
-        criterio1="Nombre"
-        criterio2="Grupo"
+        criteria1="Nombre"
+        criteria2="Grupo"
       />
 
-      {/* Contenido de la página de administración de medicamentos */}
+      {/* Contenido de la página de administración de medicine */}
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Medicamentos</h3>
         <GenericTable
-          data={medicamentos
+          data={medicine
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((medicamento, index) => ({
-              ...medicamento,
+            .map((medicine, index) => ({
+              ...medicine,
               Acciones:
               <div>
                 <UpdateButton
                   itemType=""
-                  item={medicamento}
-                  camposForm={camposForm}
+                  item={medicine}
+                  formFields={formFields}
                 />
               </div>
           }))}
@@ -80,20 +77,20 @@ const MedicineManager = () => {
         />
 
         <Pagination
-          totalItems={medicamentos.length}
+          totalItems={medicine.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </div>
 
       <div className="buttons">
+
         <AddButton
           itemType="Medicamento"
-          listaItems={listaItems}
-          setListaItems={setListaItems}
-          camposForm={camposForm} />
+          itemList={itemList}
+          setItemList={setItemList}
+          formFields={formFields} />
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

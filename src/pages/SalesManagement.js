@@ -8,27 +8,25 @@ import UpdateButton from '../components/UpdateButton';
 import Pagination from '../components/Pagination';
 import data from '../data/data.json'
 
-
-
 const SalesManagement = () => {
 
-  const [listaItems, setListaItems] = useState([]); // Aquí creamos las variables listaItems y setListaItems
+  const [itemList, setItemList] = useState([]);
 
   useEffect(() => {
-    setUsuarios(data.dbSales);
+    setUser(data.dbSales);
   },
     []);
 
-  const camposForm = [
-    { nombre: 'Id Ventas', tipo: 'text', placeholder: 'ID Ventas' },
-    { nombre: 'Medicamentos', tipo: 'text', placeholder: 'Medicamentos' },
-    { nombre: 'Cantidad Vendida', tipo: 'text', placeholder: 'Cantidad Vendida' },
-    { nombre: 'Fecha de Vencimiento', tipo: 'password', placeholder: 'Fecha de Vencimiento' },
-    { nombre: 'Lote', tipo: 'text', placeholder: 'Lote' },
-    { nombre: 'Importe', tipo: 'text', placeholder: 'Importe' },
+  const formFields = [
+    { name: 'Id Ventas', type: 'text', placeholder: 'ID Ventas' },
+    { name: 'Medicamentos', type: 'text', placeholder: 'Medicamentos' },
+    { name: 'Cantidad Vendida', type: 'text', placeholder: 'Cantidad Vendida' },
+    { name: 'Fecha de Vencimiento', type: 'password', placeholder: 'Fecha de Vencimiento' },
+    { name: 'Lote', type: 'text', placeholder: 'Lote' },
+    { name: 'Importe', type: 'text', placeholder: 'Importe' },
   ];
 
-  const [ventas, setUsuarios] = useState([
+  const [sales, setUser] = useState([
     //Aqui van los datos generados para simular la base de datos en mi tabla
   ]);
 
@@ -70,12 +68,12 @@ const SalesManagement = () => {
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
   const [selectedRows, setSelectedRows] = useState([]);
-  const [mostrar, setMostrar] = useState(false);
+  const [show, setShow] = useState(false);
 
   // Manejar el cambio de checkbox
   const handleCheckboxChange = (index) => {
-    setSelectedRows(selectedRows.includes(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
-    setMostrar(selectedRows.length === 0);
+    setSelectedRows(selectedRows.include(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
+    setShow(selectedRows.length === 0);
   };
 
   const handleConfirmDelete = () => {
@@ -84,40 +82,50 @@ const SalesManagement = () => {
 
   return (
     <div className='full-page'>
-      <HeadComponent titulo='Gestionar Ventas'
-        criterio1='Medicamento'
-        criterio2='Fecha'
+      <HeadComponent
+        title='Gestionar Ventas'
+        criteria1='Medicamento'
+        criteria2='Fecha'
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Ventas</h3>
         <GenericTable
-          data={ventas
+          data={sales
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((usuario, index) => ({
-              ...usuario,
+            .map((user, index) => ({
+              ...user,
               Acciones:
-              <div>
-                <UpdateButton
-                  itemType=""
-                  item={usuario}
-                  camposForm={camposForm}
-                />
-              </div>,
-            Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} />
-          }))}
+                <div>
+                  <UpdateButton
+                    itemType=""
+                    item={user}
+                    formFields={formFields}
+                  />
+                </div>,
+              Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} />
+            }))}
           columns={columns}
         />
         <Pagination
-          totalItems={ventas.length}
+          totalItems={sales.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </div>
       <div className="buttons">
-        <AddButton itemType="Ventas" listaItems={listaItems} setListaItems={setListaItems} camposForm={camposForm} />
+        <AddButton
+          itemType="Ventas"
+          itemList={itemList}
+          setItemList={setItemList}
+          formFields={formFields} />
 
 
-        <DeleteButton objeto={ventas} setObjeto={setUsuarios} selectedObjeto={selectedRows} mostrar={mostrar} onConfirmDelete={handleConfirmDelete} /> {/* Pasar los ventas seleccionados y la función de confirmar eliminación */}
+        <DeleteButton
+          item={sales}
+          setItem={setUser}
+          selectedItem={selectedRows}
+          show={show}
+          onConfirmDelete={handleConfirmDelete} />
       </div>
     </div>
   );

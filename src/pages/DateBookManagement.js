@@ -10,13 +10,13 @@ import Pagination from '../components/Pagination'
 
 const DateBookManagement = () => {
 
-  const [listaItems, setListaItems] = useState([]); // Aquí creamos las variables listaItems y setListaItems
+  const [itemList, setItemList] = useState([]); // Aquí creamos las variables itemList y setListaItems
 
-  const camposForm = [
-    { nombre: 'Nombre', tipo: 'text', placeholder: 'Nombre' },
-    { nombre: 'Lote', tipo: 'text', placeholder: 'Lote' },
-    { nombre: 'Cantidad', tipo: 'text', placeholder: 'Cantidad' },
-    { nombre: 'fecha_vencimiento', tipo: 'text', placeholder: 'Fecha Vencimiento' },
+  const formFields = [
+    { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
+    { name: 'Lote', type: 'text', placeholder: 'Lote' },
+    { name: 'Cantidad', type: 'text', placeholder: 'Cantidad' },
+    { name: 'fecha_vencimiento', type: 'text', placeholder: 'Fecha Vencimiento' },
   ];
 
   useEffect(() => {
@@ -26,16 +26,13 @@ const DateBookManagement = () => {
 
   const [dateBook, setDateBook] = useState([]);
 
-  // Estado para el número de página actual
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Función para manejar el cambio de página
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // Calcula los índices de los elementos a mostrar en la página actual
   const indexOfLastElement = currentPage * itemsPerPage;
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
@@ -62,9 +59,8 @@ const DateBookManagement = () => {
   ];
 
   const [selectedRows, setSelectedRows] = useState([]);
-  const [mostrar, setMostrar] = useState(false);
+  const [show, setMostrar] = useState(false);
 
-  // Manejar el cambio de checkbox
   const handleCheckboxChange = (index) => {
     setSelectedRows(selectedRows.includes(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
     setMostrar(selectedRows.length === 0);
@@ -92,7 +88,7 @@ const DateBookManagement = () => {
                   <UpdateButton
                     itemType=""
                     item={dateBook}
-                    camposForm={camposForm}
+                    formFields={formFields}
                   />
                 </div>,
               Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} />
@@ -106,17 +102,20 @@ const DateBookManagement = () => {
         />
       </div>
       <div className="buttons">
-        <AddButton itemType="Lote" listaItems={listaItems} setListaItems={setListaItems} camposForm={camposForm} />
+        <AddButton
+          itemType="Lote"
+          itemList={itemList}
+          setItemList={setItemList}
+          formFields={formFields} />
 
 
         <DeleteButton
-          objeto={dateBook}
-          setObjeto={setDateBook}
-          selectedObjeto={selectedRows}
-          mostrar={mostrar}
-          onConfirmDelete={handleConfirmDelete} /> {/* Pasar los usuarios seleccionados y la función de confirmar eliminación */}
+          item={dateBook}
+          setItem={setDateBook}
+          selectedItem={selectedRows}
+          show={show}
+          onConfirmDelete={handleConfirmDelete} />
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 {
-    "bsMedicamentos": [
+    "bsMedicine": [
         {
             "Nombre": "Paracetamol",
             "Grupo": "Analgésicos",
@@ -141,7 +141,7 @@
             "Estado": "Activo"
         }
     ],
-    "bsUsuarios": [
+    "bsUsers": [
         {
             "Nombre": "Juan",
             "Apellidos": "García",
@@ -627,7 +627,7 @@
             "Importe": 183.75
         }
     ],
-    "dbDoctores": [
+    "dbDoctors": [
         {
             "nombreDoctor": "Dr. Carlos",
             "Apellidos": "González López",

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../css/addButton.css';
 import { useForm } from "react-hook-form";
 
-function UpdateButton({ itemType, item, camposForm }) {
+function UpdateButton({ itemType, item, formFields }) {
   const [showModal, setShowModal] = useState(false);
-  const [editingItem, usuario] = useState(null);
+  const [editingItem, user] = useState(null);
 
   const { register, handleSubmit } = useForm({
     defaultValues: item
@@ -29,14 +29,14 @@ function UpdateButton({ itemType, item, camposForm }) {
               <div className="close">Cerrar</div>
             </button>
             <form className='form' onSubmit={onSubmit}>
-              {camposForm.map((campo, index) => (
+              {formFields.map((field, index) => (
                 <input
                   key={index}
                   className='form-inputs'
-                  type={campo.tipo}
-                  placeholder={campo.placeholder}
-                  name={campo.nombre}
-                  {...register(campo.nombre, { required: true })}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  name={field.name}
+                  {...register(field.name, { required: true })}
                 />
               ))}
               <button className='modal-submit-addButton' type="submit"> {itemType} Modificar</button>

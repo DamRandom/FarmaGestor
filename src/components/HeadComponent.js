@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../css/searchBar.css';
 import { SideBar } from "./SideBar";
 
-export const HeadComponent = ({ titulo, criterio1, criterio2 }) => {
+export const HeadComponent = ({ title, criteria1, criteria2 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchByDate, setSearchByDate] = useState(false);
   const [searchByMedicine, setSearchByMedicine] = useState(false);
@@ -40,7 +40,7 @@ export const HeadComponent = ({ titulo, criterio1, criterio2 }) => {
       <SideBar />
       <h1>FarmaGestor</h1>
       <form onSubmit={handleSubmit} className="search-bar-container">
-        <div onClick={toggleExpanded} className="search-input-container"> {/* Al hacer clic, expande el formulario */}
+        <div onClick={toggleExpanded} className="search-input-container"> 
           <input
             type="text"
             placeholder="Buscar..."
@@ -57,7 +57,7 @@ export const HeadComponent = ({ titulo, criterio1, criterio2 }) => {
                 checked={searchByDate}
                 onChange={handleCheckboxChange}
               />
-              {criterio1}
+              {criteria1}
             </label>
             <label className='2check'>
               <input
@@ -66,7 +66,7 @@ export const HeadComponent = ({ titulo, criterio1, criterio2 }) => {
                 checked={searchByMedicine}
                 onChange={handleCheckboxChange}
               />
-              {criterio2}
+              {criteria2}
             </label>
           </div>
         )}

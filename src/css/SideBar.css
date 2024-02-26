@@ -38,6 +38,10 @@
     z-index: 1000;
 }
 
+.modal-cerrar-sesion {
+    color: #333;
+}
+
 .modal-content {
     text-align: center;
 }

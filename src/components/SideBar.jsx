@@ -4,16 +4,21 @@ import card from '../assets/farmagestor-card.png';
 import '../css/SideBar.css';
 import { AuthContext } from '../auth/authContext';
 import { types } from '../types/types';
+import '../css/deleteButton.css';
 
 export function SideBar() {
     const [openMenu, setOpenMenu] = useState(false);
     const [openModal, setOpenModal] = useState(false);
     const sideBarRef = useRef(null);
+    const modalRef = useRef(null);
 
     useEffect(() => {
         function handleClickOutside(event) {
             if (sideBarRef.current && !sideBarRef.current.contains(event.target)) {
                 setOpenMenu(false);
+            }
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                setOpenModal(false);
             }
         }
 
@@ -131,14 +136,14 @@ export function SideBar() {
                 </div>
             </div>
             {openModal && (
-                <div className="modal-cerrarSesion">
-                    <div className="modal-content">
-                        <h2>¿Estás seguro que deseas cerrar sesión?</h2>
-                        <div className='botonesModal-cerrarSesion'>
-                            <button onClick={handleCerrarSesion}>Confirmar</button>
-                            <button onClick={handleCloseModal}>Cancelar</button>
-                        </div>
+                <div className="modal-cerrarSesion" ref={modalRef}>
+                    <label className='modal-titulo'>Cerrar Sesión</label>
+                    <p className='modal-cerrar-sesion'>¿Está seguro de que desea cerrar su sesión actual?</p>
+                    <div className="modal-buttons">
+                        <button onClick={handleCerrarSesion}>Confirmar</button>
+                        <button onClick={handleCloseModal}>Cancelar</button>
                     </div>
+
                 </div>
             )}
         </>

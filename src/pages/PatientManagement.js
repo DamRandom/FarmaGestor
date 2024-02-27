@@ -21,7 +21,11 @@ const PatientManagement = () => {
     console.log('Pacientes seleccionados para eliminar:', selectedRows);
   };
 
-  
+  const criteria = [
+    { criteria: 'Nombre' },
+    { criteria: 'Enfermedad' },
+    { criteria: 'Grupo de Medicamentos'}
+  ];
 
   const formFields = [
     { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
@@ -77,8 +81,7 @@ const [show, setShow] = useState(false);
   return (
     <div className='full-page'>
       <HeadComponent title='Pacientes con Tarjetón'
-        criteria1='Nombre'
-        criteria2='Enfermedad'
+        criteria={criteria}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Pacientes con Tarjetón</h3>

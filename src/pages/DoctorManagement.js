@@ -41,6 +41,11 @@ const DoctorManagement = () => {
   const indexOfLastElement = currentPage * itemsPerPage;
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
+  const criteria = [
+    { criteria: 'Nombre' },
+    { criteria: 'Folio' },
+  ];
+
   const columns = [
     { header: 'Nombre', field: 'nombreDoctor' },
     { header: 'Apellidos', field: 'Apellidos' },
@@ -78,8 +83,7 @@ const DoctorManagement = () => {
     <div className='full-page'>
       <HeadComponent
         title='Gestionar Doctores'
-        criteria1='Nombre'
-        criteria2='Folio'
+        criteria={criteria}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Doctores</h3>
@@ -122,7 +126,7 @@ const DoctorManagement = () => {
           setItem={setDoctors}
           selectedItem={selectedRows}
           show={show}
-          onConfirmDelete={handleConfirmDelete} /> {/* Pasar los doctores seleccionados y la función de confirmar eliminación */}
+          onConfirmDelete={handleConfirmDelete} />
       </div>
     </div >
   );

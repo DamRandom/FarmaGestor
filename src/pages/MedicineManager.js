@@ -26,6 +26,12 @@ const MedicineManager = () => {
 
   const [itemList, setItemList] = useState([]); // Aquí creamos las variables itemList y setItemList
 
+  const criteria = [
+    { criteria: 'Nombre' },
+    { criteria: 'Grupo' },
+    { criteria: 'Estado' }
+  ];
+
   const formFields = [
     { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
     { name: 'Grupo', type: 'text', placeholder: 'Grupo' },
@@ -52,8 +58,7 @@ const MedicineManager = () => {
   return (
     <div className="full-page">
       <HeadComponent
-        criteria1="Nombre"
-        criteria2="Grupo"
+        criteria={criteria}
       />
 
       {/* Contenido de la página de administración de medicine */}

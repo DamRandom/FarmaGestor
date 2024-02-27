@@ -18,7 +18,7 @@
 .SearchInput:hover, .selectCriteria:hover,
 .SearchInput:focus, .selectCriteria:focus {
   transform: scale(0.98); /* Reducir un poco el tamaño al hacer hover o estar activo */
-  box-shadow: 0 10px 20px 0 white;
+  box-shadow: 2px 2px 60px 0px white;
 }
 
 .SelectCriteria {

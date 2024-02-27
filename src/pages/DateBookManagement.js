@@ -10,7 +10,7 @@ import Pagination from '../components/Pagination'
 
 const DateBookManagement = () => {
 
-  const [itemList, setItemList] = useState([]); // Aquí creamos las variables itemList y setListaItems
+  const [itemList, setItemList] = useState([]);
 
   const formFields = [
     { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
@@ -35,6 +35,11 @@ const DateBookManagement = () => {
 
   const indexOfLastElement = currentPage * itemsPerPage;
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
+
+  const criteria = [
+    { criteria: 'Medicamento' },
+    { criteria: 'Fecha de Vencimiento' },
+  ];
 
   const columns = [
     { header: 'Nombre', field: 'Nombre' },
@@ -73,8 +78,7 @@ const DateBookManagement = () => {
   return (
     <div className='full-page'>
       <HeadComponent titulo='Gestionar Libro de Vencimiento'
-        criterio1='Medicamento'
-        criterio2='Fecha de Vencimiento'
+        criteria={criteria}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Libro de Vencimiento</h3>

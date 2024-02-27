@@ -27,6 +27,12 @@ const UserManagement = () => {
   },
     []);
 
+  const criteria = [
+    { criteria: 'Nombre' },
+    { criteria: 'Usuario' },
+    { criteria: 'Rol' }
+  ];
+
   const columns = [
     { header: 'Nombre', field: 'Nombre' },
     { header: 'Apellidos', field: 'Apellidos' },
@@ -81,14 +87,13 @@ const UserManagement = () => {
     console.log('Usuarios seleccionados para eliminar:', selectedRows);
     setSelectedRows([]);
   };
-  
 
   return (
 
     <div className='full-page'>
-      <HeadComponent title='Gestionar Usuario'
-        criteria1='Nombre'
-        criteria2='Apellido'
+      <HeadComponent
+        title='Gestionar Usuario'
+        criteria={criteria}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Usuarios</h3>

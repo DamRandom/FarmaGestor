@@ -17,6 +17,11 @@ const SalesManagement = () => {
   },
     []);
 
+    const criteria = [
+      { criteria: 'Medicamento' },
+      { criteria: 'Fecha' },
+    ];
+
   const formFields = [
     { name: 'Id Ventas', type: 'text', placeholder: 'ID Ventas' },
     { name: 'Medicamentos', type: 'text', placeholder: 'Medicamentos' },
@@ -84,8 +89,7 @@ const SalesManagement = () => {
     <div className='full-page'>
       <HeadComponent
         title='Gestionar Ventas'
-        criteria1='Medicamento'
-        criteria2='Fecha'
+        criteria={criteria}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Ventas</h3>

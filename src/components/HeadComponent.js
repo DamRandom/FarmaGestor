@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../css/searchBar.css';
 import { SideBar } from "./SideBar";
+import SearchBar from './SearchBar'
 
 export const HeadComponent = ({ title, criteria1, criteria2 }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -38,39 +39,11 @@ export const HeadComponent = ({ title, criteria1, criteria2 }) => {
   return (
     <header>
       <SideBar />
-      <h1>FarmaGestor</h1>
-      <form onSubmit={handleSubmit} className="search-bar-container">
-        <div onClick={toggleExpanded} className="search-input-container"> 
-          <input
-            type="text"
-            placeholder="Buscar..."
-            value={searchTerm}
-            onChange={handleInputChange}
-          />
-        </div>
-        {expanded && (
-          <div className="criteria-container">
-            <label className='1check'>
-              <input
-                type="checkbox"
-                name="date"
-                checked={searchByDate}
-                onChange={handleCheckboxChange}
-              />
-              {criteria1}
-            </label>
-            <label className='2check'>
-              <input
-                type="checkbox"
-                name="medicine"
-                checked={searchByMedicine}
-                onChange={handleCheckboxChange}
-              />
-              {criteria2}
-            </label>
-          </div>
-        )}
-      </form>
+      <div className="head-container">
+        <h1 className="FarmaGestor">FarmaGestor</h1>
+        <SearchBar />
+      </div>
+
     </header>
   );
 };

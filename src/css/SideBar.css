@@ -91,7 +91,7 @@
 
 .btnSideBar:hover {
     background-color: white !important;
-    color: var(--primary);
+    color: #0056b3 !important;
 }
 
 .btn-close {

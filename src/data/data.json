@@ -1,5 +1,5 @@
 {
-    "bsMedicine": [
+    "dbMedicine": [
         {
             "Nombre": "Paracetamol",
             "Grupo": "Analgésicos",
@@ -141,7 +141,7 @@
             "Estado": "Activo"
         }
     ],
-    "bsUsers": [
+    "dbUsers": [
         {
             "Nombre": "Juan",
             "Apellidos": "García",

@@ -1,43 +1,45 @@
-/* Estilos para la barra de búsqueda */
-.search-bar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Alinear los elementos a la derecha */
-    position: relative;
-    bottom: 20px;
-    justify-content: flex-end; /* Alinear los elementos a la derecha */
-    color: black; /* Cambiado el color de la letra a negro */
+.SearchBar {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
 }
 
-.search-input-container {
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    margin-right: 10px; /* Espacio entre la barra de búsqueda y los criterios */
-    position: relative;
-    bottom: 20px;
+.SearchInput, .selectCriteria {
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  outline-color: #0056b3;
+  border-radius: 4px;
+  width: 200px;
+  transition: all 0.3s ease; /* Transición suave para el hover */
+  box-shadow: none; /* Por defecto sin sombra */
 }
 
-.search-input-container input {
-    border: none;
-    outline: none;
-    margin-right: 5px; /* Espacio entre el texto de búsqueda y el icono de búsqueda */
+.SearchInput:hover, .selectCriteria:hover,
+.SearchInput:focus, .selectCriteria:focus {
+  transform: scale(0.98); /* Reducir un poco el tamaño al hacer hover o estar activo */
+  box-shadow: 0 10px 20px 0 white;
 }
 
-.search-icon {
-    width: 20px; /* Tamaño del icono de búsqueda */
-    border: none;
+.SelectCriteria {
+  width: 200px;
+  height: 18px;
 }
 
-/* Estilos para los criterios de búsqueda */
-.criteria-container {
-    margin-top: -8px; /* Espacio entre la barra de búsqueda y los criterios */
-    display: flex; /* Mostrar los criterios en línea */
-    flex-direction:column; /* Mostrar los criterios uno encima del otro */
-    align-items: flex-start;
-    width: 15%;
+.SearchBar select {
+  padding: 8px;
+  margin-right: 8px;
 }
 
-.criteria-label {
-    margin-right: 10px;
+.SearchBar button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.SearchBar button:hover {
+  background-color: #0056b3;
 }

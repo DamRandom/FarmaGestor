@@ -6,6 +6,7 @@ import PatientManagement from '../pages/PatientManagement';
 import VentasManagement from '../pages/SalesManagement';
 import DoctorManagement from '../pages/DoctorManagement';
 import DateBookManagement from '../pages/DateBookManagement';
+import SearchBar from '../components/SearchBar';
 
 
 
@@ -14,6 +15,7 @@ import DateBookManagement from '../pages/DateBookManagement';
 export const RouterInterno = () => {
     return (
         <>
+        <SearchBar/>
             <Routes>
                 <Route path="HomePage" element={<HomePage />} />
                 <Route path="/UserManagement" element={<UserManagement />} />

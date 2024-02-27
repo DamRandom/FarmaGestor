@@ -79,11 +79,21 @@ header {
     z-index: 990;
 }
 
+.head-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 h2 {
     text-align: center;
     color: var(--primary-color);
     margin-top: 10px;
     margin-bottom: 60px;
+}
+
+.FarmaGestor {
+    margin-left: 60px;
 }
 
 /* Pie de página */

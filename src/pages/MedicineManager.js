@@ -11,7 +11,7 @@ const MedicineManager = () => {
   const [medicine, setMedicine] = useState([]);
 
   useEffect(() => {
-    setMedicine(data.bsMedicine);
+    setMedicine(data.dbMedicine);
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);

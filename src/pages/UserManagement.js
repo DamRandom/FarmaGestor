@@ -23,7 +23,7 @@ const UserManagement = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    setUsers(data.bsUsers);
+    setUsers(data.dbUsers);
   },
     []);
 

@@ -3,7 +3,7 @@ import '../css/searchBar.css';
 import { SideBar } from "./SideBar";
 import SearchBar from './SearchBar'
 
-export const HeadComponent = ({ title, criteria}) => {
+export const HeadComponent = ({criteria, setSearch}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchByDate, setSearchByDate] = useState(false);
   const [searchByMedicine, setSearchByMedicine] = useState(false);
@@ -42,7 +42,7 @@ export const HeadComponent = ({ title, criteria}) => {
       <SideBar />
       <div className="head-container">
         <h1 className="FarmaGestor">FarmaGestor</h1>
-        <SearchBar criteria={criteria}/>
+        <SearchBar criteria={criteria} setSearch={setSearch}/>
       </div>
 
     </header>

@@ -20,6 +20,12 @@
   transform: scale(0.98); /* Reducir un poco el tamaño al hacer hover o estar activo */
   box-shadow: 2px 2px 60px 0px white;
 }
+.restartSearch {
+  background: transparent !important;
+  color: black !important;
+  position: relative;
+  right: 50px;
+}
 
 .SelectCriteria {
   width: 200px;

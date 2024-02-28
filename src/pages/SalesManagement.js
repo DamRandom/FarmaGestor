@@ -7,13 +7,14 @@ import AddButton from '../components/AddButton';
 import UpdateButton from '../components/UpdateButton';
 import Pagination from '../components/Pagination';
 import data from '../data/data.json'
+import { Footer } from '../components/Footer';
 
 const SalesManagement = () => {
 
   const [itemList, setItemList] = useState([]);
 
   useEffect(() => {
-    setUser(data.dbSales);
+    setTableData(data.dbSales);
   },
     []);
 
@@ -21,6 +22,23 @@ const SalesManagement = () => {
       { criteria: 'Medicamento' },
       { criteria: 'Fecha' },
     ];
+
+    //Save search fields and values into var.
+  const [search, setSearch] = useState({
+    field: 'nombre',
+    value: ''
+  });
+
+  const { value, field } = search;
+
+  const [tableData, setTableData] = useState(data.dbSales);
+
+  useEffect(() => {
+    let res = tableData
+    if (field === 'Medicamento') res = data.dbSales.filter(({ Medicamento }) => Medicamento.includes(value));
+    else if (field === 'Fecha') res = data.dbSales.filter(({ Fecha }) => Fecha.includes(value));
+    setTableData(res);
+  }, [search]);
 
   const formFields = [
     { name: 'Id Ventas', type: 'text', placeholder: 'ID Ventas' },
@@ -31,9 +49,6 @@ const SalesManagement = () => {
     { name: 'Importe', type: 'text', placeholder: 'Importe' },
   ];
 
-  const [sales, setUser] = useState([
-    //Aqui van los datos generados para simular la base de datos en mi tabla
-  ]);
 
   const columns = [
     { header: 'ID Ventas', field: 'ID Ventas' },
@@ -59,11 +74,11 @@ const SalesManagement = () => {
     }
   ];
 
-  // Estado para el número de página actual
+  // Current Page Status
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Función para manejar el cambio de página
+  // Function to handle page change
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -88,21 +103,21 @@ const SalesManagement = () => {
   return (
     <div className='full-page'>
       <HeadComponent
-        title='Gestionar Ventas'
+      setSearch={setSearch}
         criteria={criteria}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Ventas</h3>
         <GenericTable
-          data={sales
+          data={tableData
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((user, index) => ({
-              ...user,
+            .map((tableData, index) => ({
+              ...tableData,
               Acciones:
                 <div>
                   <UpdateButton
                     itemType=""
-                    item={user}
+                    item={tableData}
                     formFields={formFields}
                   />
                 </div>,
@@ -111,7 +126,7 @@ const SalesManagement = () => {
           columns={columns}
         />
         <Pagination
-          totalItems={sales.length}
+          totalItems={tableData.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
@@ -125,12 +140,13 @@ const SalesManagement = () => {
 
 
         <DeleteButton
-          item={sales}
-          setItem={setUser}
+          item={tableData}
+          setItem={setTableData}
           selectedItem={selectedRows}
           show={show}
           onConfirmDelete={handleConfirmDelete} />
       </div>
+      <Footer className='userFooter'/>
     </div>
   );
 }

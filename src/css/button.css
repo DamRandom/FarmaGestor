@@ -27,6 +27,7 @@ button:active {
     width: calc(100% - 40px);
     margin: 0 auto;
     transition: margin-left 0.5s ease;
+    
 }
 
 .buttons-container button {
@@ -51,6 +52,7 @@ button:active {
     justify-content: space-evenly;
     width: 100%;
     margin-top: -10px;
+    margin-bottom: 80px;
 }
 
 .buttons button:active {

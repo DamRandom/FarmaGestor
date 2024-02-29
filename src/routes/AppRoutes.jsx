@@ -12,17 +12,17 @@ export const AppRouter = () => {
         <BrowserRouter>
             <Routes>
             
-                <Route path="/login" element={
+                <Route path="/*" element={
                     <RutasPublicas>
                         <Login />
                     </RutasPublicas>
                 } />
-                
+{/*                 
                 <Route path="/*" element={
                     <RutasPrivadas >
                         <RouterInterno />
                     </RutasPrivadas>
-                } />
+                } /> */}
             
             </Routes>
         </BrowserRouter>

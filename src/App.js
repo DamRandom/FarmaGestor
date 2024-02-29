@@ -19,11 +19,9 @@ function App() {
 
     return (
         <div className="app-container">
-            {/* <AuthContext.Provider value={{ usuario, dispatch }}>
+            <AuthContext.Provider value={{ usuario, dispatch }}>
                 <AppRouter />
-            </AuthContext.Provider> */}
-
-            <h1>hola</h1>
+            </AuthContext.Provider>
         </div>
     )
 }

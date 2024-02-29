@@ -67,7 +67,7 @@ const UserManagement = () => {
       )
     },
     {
-      header: '',
+      header: <input type= 'checkbox' className='selectAllCheck'></input>,
       className: 'columnCheckBox',
       field: 'Checkbox',
       render: (rowData, rowIndex) => (

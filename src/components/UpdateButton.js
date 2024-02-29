@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/addButton.css';
 import { useForm } from "react-hook-form";
+import { putDoctores } from '../api/doctor';
 
 function UpdateButton({ itemType, item, formFields }) {
   const [showModal, setShowModal] = useState(false);
@@ -11,6 +12,10 @@ function UpdateButton({ itemType, item, formFields }) {
   });
 
   const onSubmit = handleSubmit(async data => {
+    if(itemType === "Doctor"){
+      console.log(data);
+      await putDoctores(data);
+    }
     console.log('Updated item:', { ...item, ...data });
     setShowModal(false);
   });
@@ -29,11 +34,11 @@ function UpdateButton({ itemType, item, formFields }) {
 
   return (
     <>
-      <button className='add-button' onClick={() => setShowModal(true)}>Modificar {itemType}</button>
+      <button className='add-button' onClick={() => setShowModal(true)}>Modificar</button>
       {showModal &&
         <div className="modal-overlay">
           <div ref={modalRef} className="modal">
-            <label className='modal-title'>Actualizar {itemType}</label>
+            <label className='modal-title'>Actualizar</label>
             <button className="close-button" onClick={() => setShowModal(false)}>
               <span className="X"></span>
               <span className="Y"></span>
@@ -50,7 +55,7 @@ function UpdateButton({ itemType, item, formFields }) {
                   {...register(field.name, { required: true })}
                 />
               ))}
-              <button className='modal-submit-addButton' type="submit"> {itemType} Modificar</button>
+              <button className='modal-submit-addButton' type="submit">Modificar</button>
             </form>
           </div>
         </div>

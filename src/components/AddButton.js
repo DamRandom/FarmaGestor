@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/addButton.css';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
+import { postDoctores } from '../api/doctor';
 
 function AddButton({ itemType, formFields }) {
 
@@ -23,7 +24,10 @@ function AddButton({ itemType, formFields }) {
 
   // Function to handle form submission
   const onSubmit = handleSubmit(async data => {
-    console.log(data); // Log form data
+    if(itemType === "Doctor"){
+      console.log(data); // Log form data
+      await postDoctores(data)
+    }
     setShowModal(false);  // Close modal and show notification
     setShowNotification(true);
 

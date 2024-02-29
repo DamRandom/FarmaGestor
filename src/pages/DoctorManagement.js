@@ -7,6 +7,7 @@ import AddButton from '../components/AddButton';
 import UpdateButton from '../components/UpdateButton';
 import Pagination from '../components/Pagination';
 import data from '../data/data.json';
+import { getDoctores } from '../api/doctor';
 
 
 
@@ -24,20 +25,22 @@ const DoctorManagement = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    setDoctors(data.dbDoctors);
+    // setDoctors(data.dbDoctors);
+    async function loadDoctors(){
+      const resp = await getDoctores();
+      setDoctorList(resp.data)
+    }
+    loadDoctors();
   },
     []);
 
-  // Estado para el número de página actual
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Función para manejar el cambio de página
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // Calcula los índices de los elementos a mostrar en la página actual
   const indexOfLastElement = currentPage * itemsPerPage;
   const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
@@ -88,15 +91,15 @@ const DoctorManagement = () => {
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Doctores</h3>
         <GenericTable
-          data={doctors
+          data={doctorList
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((doctors, index) => ({
-              ...doctors,
+            .map((doctorList, index) => ({
+              ...doctorList,
               Acciones:
                 <div>
                   <UpdateButton
-                    itemType=""
-                    item={doctors}
+                    itemType="Doctor"
+                    item={doctorList}
                     formFields={formFields}
                   />
                 </div>,
@@ -107,7 +110,7 @@ const DoctorManagement = () => {
         />
 
         <Pagination
-          totalItems={doctors.length}
+          totalItems={doctorList.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
@@ -122,8 +125,8 @@ const DoctorManagement = () => {
 
 
         <DeleteButton
-          item={doctors}
-          setItem={setDoctors}
+          item={doctorList}
+          setItem={setDoctorList}
           selectedItem={selectedRows}
           show={show}
           onConfirmDelete={handleConfirmDelete} />

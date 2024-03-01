@@ -9,6 +9,7 @@ import SalesManagement from './pages/SalesManagement';
 import PatientManagement from './pages/PatientManagement';
 import MedicineManager from './pages/MedicineManager';
 import DoctorManagement from './pages/DoctorManagement';
+import DateBookManagement from './pages/DateBookManagement';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('usuario')) || { logged: false };
@@ -32,7 +33,7 @@ function App() {
 
 
 
-         <DoctorManagement/>
+         <DateBookManagement/>
             
         </div>
     )

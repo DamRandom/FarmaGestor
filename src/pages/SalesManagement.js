@@ -102,10 +102,10 @@ const SalesManagement = () => {
 
   return (
     <div className='full-page'>
-      {/* <HeadComponent
+      <HeadComponent
       setSearch={setSearch}
         criteria={criteria}
-      /> */}
+      />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Ventas</h3>
         <GenericTable

@@ -4,6 +4,7 @@ import { authReducer } from './auth/authReducer';
 import './App.css';
 import { AppRouter } from './routes/AppRoutes';
 import HomePage from './pages/HomePage';
+import UserManagement from './pages/UserManagement';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('usuario')) || { logged: false };
@@ -27,7 +28,7 @@ function App() {
 
 
 
-            <HomePage />
+          <UserManagement/>
             
         </div>
     )

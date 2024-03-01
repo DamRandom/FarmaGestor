@@ -84,10 +84,10 @@ const DoctorManagement = () => {
 
   return (
     <div className='full-page'>
-      <HeadComponent
+      {/* <HeadComponent
         title='Gestionar Doctores'
         criteria={criteria}
-      />
+      /> */}
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Doctores</h3>
         <GenericTable

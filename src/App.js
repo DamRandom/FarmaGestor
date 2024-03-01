@@ -3,13 +3,6 @@ import { AuthContext } from './auth/authContext';
 import { authReducer } from './auth/authReducer';
 import './App.css';
 import { AppRouter } from './routes/AppRoutes';
-import HomePage from './pages/HomePage';
-import UserManagement from './pages/UserManagement';
-import SalesManagement from './pages/SalesManagement';
-import PatientManagement from './pages/PatientManagement';
-import MedicineManager from './pages/MedicineManager';
-import DoctorManagement from './pages/DoctorManagement';
-import DateBookManagement from './pages/DateBookManagement';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('usuario')) || { logged: false };
@@ -26,15 +19,9 @@ function App() {
 
     return (
         <div className="app-container">
-            {/* <AuthContext.Provider value={{ usuario, dispatch }}>
+            <AuthContext.Provider value={{ usuario, dispatch }}>
                 <AppRouter />
-            </AuthContext.Provider> */}
-
-
-
-
-         <DateBookManagement/>
-            
+            </AuthContext.Provider>
         </div>
     )
 }

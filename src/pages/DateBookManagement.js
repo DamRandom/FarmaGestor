@@ -77,9 +77,9 @@ const DateBookManagement = () => {
 
   return (
     <div className='full-page'>
-      {/* <HeadComponent titulo='Gestionar Libro de Vencimiento'
+      <HeadComponent titulo='Gestionar Libro de Vencimiento'
         criteria={criteria}
-      /> */}
+      />
       <div className="container">
         <h3 className='titulo-tabla'>Libro de Vencimiento</h3>
         <GenericTable

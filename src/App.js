@@ -3,6 +3,7 @@ import { AuthContext } from './auth/authContext';
 import { authReducer } from './auth/authReducer';
 import './App.css';
 import { AppRouter } from './routes/AppRoutes';
+import HomePage from './pages/HomePage';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('usuario')) || { logged: false };
@@ -23,7 +24,11 @@ function App() {
                 <AppRouter />
             </AuthContext.Provider> */}
 
-            <h1>hola</h1>
+
+
+
+            <HomePage />
+            
         </div>
     )
 }

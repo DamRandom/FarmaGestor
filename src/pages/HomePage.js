@@ -11,7 +11,7 @@ import { Footer } from '../components/Footer';
 const HomePage = () => {
     return (
         <div className="home-page">
-            {/* <HeadComponent />  */}
+            <HeadComponent /> 
 
             <div className="logo-container">
                 <img src={logo} alt="Logo de la empresa" className="logo" />

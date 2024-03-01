@@ -57,9 +57,9 @@ const MedicineManager = () => {
 
   return (
     <div className="full-page">
-      <HeadComponent
+      {/* <HeadComponent
         criteria={criteria}
-      />
+      /> */}
 
       {/* Contenido de la página de administración de medicine */}
       <div className="container">

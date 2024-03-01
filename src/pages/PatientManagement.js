@@ -80,9 +80,9 @@ const [show, setShow] = useState(false);
 
   return (
     <div className='full-page'>
-      {/* <HeadComponent title='Pacientes con Tarjetón'
+      <HeadComponent title='Pacientes con Tarjetón'
         criteria={criteria}
-      /> */}
+      />
       <div className="container">
         <h3 className='titulo-tabla'>Pacientes con Tarjetón</h3>
         <GenericTable

@@ -6,7 +6,7 @@ import AddButton from '../components/AddButton';
 import UpdateButton from '../components/UpdateButton';
 import Pagination from '../components/Pagination';
 import data from '../data/data.json';
-import {Footer} from '../components/Footer'
+import { Footer } from '../components/Footer'
 
 const UserManagement = () => {
 
@@ -20,14 +20,14 @@ const UserManagement = () => {
     { name: 'Rol', type: 'text', placeholder: 'Rol' },
   ];
 
-  //Search criteria
+  const searchDefault = 'Nombre';
+
   const criteria = [
     { criteria: 'Nombre' },
     { criteria: 'Usuario' },
     { criteria: 'Rol' }
   ];
 
-  //Save search fields and values into var.
   const [search, setSearch] = useState({
     field: 'nombre',
     value: ''
@@ -67,7 +67,7 @@ const UserManagement = () => {
       )
     },
     {
-      header: <input type= 'checkbox' className='selectAllCheck'></input>,
+      header: <input type='checkbox' className='selectAllCheck'></input>,
       className: 'columnCheckBox',
       field: 'Checkbox',
       render: (rowData, rowIndex) => (
@@ -100,11 +100,11 @@ const UserManagement = () => {
   };
 
   return (
-
     <div className='full-page'>
       <HeadComponent
         setSearch={setSearch}
         criteria={criteria}
+        searchDefault={searchDefault}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Usuarios</h3>
@@ -122,18 +122,15 @@ const UserManagement = () => {
                   />
                 </div>,
               Checkbox: <input type="checkbox" onChange={() => handleCheckboxChange(index)} />
-
             }))}
           columns={columns}
         />
-
         <Pagination
           totalItems={tableData.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </div>
-
       <div className="buttons">
         <AddButton
           itemType="Users"
@@ -150,7 +147,7 @@ const UserManagement = () => {
           onConfirmDelete={handleConfirmDelete}
         />
       </div>
-      <Footer className='userFooter'/>
+      <Footer className='userFooter' />
     </div >
   );
 }

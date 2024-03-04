@@ -469,264 +469,264 @@
         {
             "ID Ventas": 10001,
             "Medicamentos": "Paracetamol",
-            "Cantidad Vendida": 50,
-            "Fecha de Vencimiento": "2024-08-17",
+            "Cantidad_Vendida": 50,
+            "Fecha_de_Vencimiento": "2024-08-17",
             "Lote": 4521,
             "Importe": 250.75
         },
         {
             "ID Ventas": 10002,
             "Medicamentos": "Ibuprofeno",
-            "Cantidad Vendida": 30,
-            "Fecha de Vencimiento": "2024-10-22",
+            "Cantidad_Vendida": 30,
+            "Fecha_de_Vencimiento": "2024-10-22",
             "Lote": 7896,
             "Importe": 180.45
         },
         {
             "ID Ventas": 10003,
             "Medicamentos": "Amoxicilina",
-            "Cantidad Vendida": 20,
-            "Fecha de Vencimiento": "2024-09-03",
+            "Cantidad_Vendida": 20,
+            "Fecha_de_Vencimiento": "2024-09-03",
             "Lote": 2365,
             "Importe": 120.60
         },
         {
             "ID Ventas": 10004,
             "Medicamentos": "Omeprazol",
-            "Cantidad Vendida": 40,
-            "Fecha de Vencimiento": "2024-11-30",
+            "Cantidad_Vendida": 40,
+            "Fecha_de_Vencimiento": "2024-11-30",
             "Lote": 8742,
             "Importe": 350.20
         },
         {
             "ID Ventas": 10005,
             "Medicamentos": "Atorvastatina",
-            "Cantidad Vendida": 25,
-            "Fecha de Vencimiento": "2024-10-15",
+            "Cantidad_Vendida": 25,
+            "Fecha_de_Vencimiento": "2024-10-15",
             "Lote": 1258,
             "Importe": 220.35
         },
         {
             "ID Ventas": 10006,
             "Medicamentos": "Paracetamol",
-            "Cantidad Vendida": 35,
-            "Fecha de Vencimiento": "2024-09-08",
+            "Cantidad_Vendida": 35,
+            "Fecha_de_Vencimiento": "2024-09-08",
             "Lote": 3698,
             "Importe": 185.50
         },
         {
             "ID Ventas": 10007,
             "Medicamentos": "Ibuprofeno",
-            "Cantidad Vendida": 15,
-            "Fecha de Vencimiento": "2024-10-05",
+            "Cantidad_Vendida": 15,
+            "Fecha_de_Vencimiento": "2024-10-05",
             "Lote": 5623,
             "Importe": 90.25
         },
         {
             "ID Ventas": 10008,
             "Medicamentos": "Amoxicilina",
-            "Cantidad Vendida": 45,
-            "Fecha de Vencimiento": "2024-08-29",
+            "Cantidad_Vendida": 45,
+            "Fecha_de_Vencimiento": "2024-08-29",
             "Lote": 9321,
             "Importe": 270.80
         },
         {
             "ID Ventas": 10009,
             "Medicamentos": "Omeprazol",
-            "Cantidad Vendida": 10,
-            "Fecha de Vencimiento": "2024-12-10",
+            "Cantidad_Vendida": 10,
+            "Fecha_de_Vencimiento": "2024-12-10",
             "Lote": 7532,
             "Importe": 85.40
         },
         {
             "ID Ventas": 10010,
             "Medicamentos": "Atorvastatina",
-            "Cantidad Vendida": 55,
-            "Fecha de Vencimiento": "2024-09-25",
+            "Cantidad_Vendida": 55,
+            "Fecha_de_Vencimiento": "2024-09-25",
             "Lote": 4875,
             "Importe": 385.75
         },
         {
             "ID Ventas": 10011,
             "Medicamentos": "Paracetamol",
-            "Cantidad Vendida": 28,
-            "Fecha de Vencimiento": "2024-11-20",
+            "Cantidad_Vendida": 28,
+            "Fecha_de_Vencimiento": "2024-11-20",
             "Lote": 6985,
             "Importe": 140.35
         },
         {
             "ID Ventas": 10012,
             "Medicamentos": "Ibuprofeno",
-            "Cantidad Vendida": 42,
-            "Fecha de Vencimiento": "2024-09-15",
+            "Cantidad_Vendida": 42,
+            "Fecha_de_Vencimiento": "2024-09-15",
             "Lote": 2541,
             "Importe": 252.30
         },
         {
             "ID Ventas": 10013,
             "Medicamentos": "Amoxicilina",
-            "Cantidad Vendida": 18,
-            "Fecha de Vencimiento": "2024-10-18",
+            "Cantidad_Vendida": 18,
+            "Fecha_de_Vencimiento": "2024-10-18",
             "Lote": 6321,
             "Importe": 108.90
         },
         {
             "ID Ventas": 10014,
             "Medicamentos": "Omeprazol",
-            "Cantidad Vendida": 38,
-            "Fecha de Vencimiento": "2024-12-05",
+            "Cantidad_Vendida": 38,
+            "Fecha_de_Vencimiento": "2024-12-05",
             "Lote": 3658,
             "Importe": 342.20
         },
         {
             "ID Ventas": 10015,
             "Medicamentos": "Atorvastatina",
-            "Cantidad Vendida": 22,
-            "Fecha de Vencimiento": "2024-08-12",
+            "Cantidad_Vendida": 22,
+            "Fecha_de_Vencimiento": "2024-08-12",
             "Lote": 8521,
             "Importe": 165.10
         },
         {
             "ID Ventas": 10016,
             "Medicamentos": "Paracetamol",
-            "Cantidad Vendida": 33,
-            "Fecha de Vencimiento": "2024-09-29",
+            "Cantidad_Vendida": 33,
+            "Fecha_de_Vencimiento": "2024-09-29",
             "Lote": 7542,
             "Importe": 165.45
         },
         {
             "ID Ventas": 10017,
             "Medicamentos": "Ibuprofeno",
-            "Cantidad Vendida": 20,
-            "Fecha de Vencimiento": "2024-11-08",
+            "Cantidad_Vendida": 20,
+            "Fecha_de_Vencimiento": "2024-11-08",
             "Lote": 6325,
             "Importe": 120.50
         },
         {
             "ID Ventas": 10018,
             "Medicamentos": "Amoxicilina",
-            "Cantidad Vendida": 48,
-            "Fecha de Vencimiento": "2024-10-02",
+            "Cantidad_Vendida": 48,
+            "Fecha_de_Vencimiento": "2024-10-02",
             "Lote": 4589,
             "Importe": 258.40
         },
         {
             "ID Ventas": 10019,
             "Medicamentos": "Omeprazol",
-            "Cantidad Vendida": 12,
-            "Fecha de Vencimiento": "2024-12-15",
+            "Cantidad_Vendida": 12,
+            "Fecha_de_Vencimiento": "2024-12-15",
             "Lote": 7541,
             "Importe": 108.60
         },
         {
             "ID Ventas": 10020,
             "Medicamentos": "Atorvastatina",
-            "Cantidad Vendida": 25,
-            "Fecha de Vencimiento": "2024-08-25",
+            "Cantidad_Vendida": 25,
+            "Fecha_de_Vencimiento": "2024-08-25",
             "Lote": 3654,
             "Importe": 183.75
         }
     ],
     "dbDoctors": [
         {
-            "nombreDoctor": "Dr. Carlos",
+            "Nombre_Doctor": "Dr. Carlos",
             "Apellidos": "González López",
-            "folioDoctor": "FOL123"
+            "Folio_Doctor": "FOL123"
         },
         {
-            "nombreDoctor": "Dra. Laura",
+            "Nombre_Doctor": "Dra. Laura",
             "Apellidos": "Martínez Pérez",
-            "folioDoctor": "FOL456"
+            "Folio_Doctor": "FOL456"
         },
         {
-            "nombreDoctor": "Dr. Alejandro",
+            "Nombre_Doctor": "Dr. Alejandro",
             "Apellidos": "Fernández Gómez",
-            "folioDoctor": "FOL789"
+            "Folio_Doctor": "FOL789"
         },
         {
-            "nombreDoctor": "Dra. María",
+            "Nombre_Doctor": "Dra. María",
             "Apellidos": "Sánchez Rodríguez",
-            "folioDoctor": "FOL012"
+            "Folio_Doctor": "FOL012"
         },
         {
-            "nombreDoctor": "Dr. Javier",
+            "Nombre_Doctor": "Dr. Javier",
             "Apellidos": "Gutiérrez Ruiz",
-            "folioDoctor": "FOL345"
+            "Folio_Doctor": "FOL345"
         },
         {
-            "nombreDoctor": "Dra. Ana",
+            "Nombre_Doctor": "Dra. Ana",
             "Apellidos": "López Hernández",
-            "folioDoctor": "FOL678"
+            "Folio_Doctor": "FOL678"
         },
         {
-            "nombreDoctor": "Dr. Miguel",
+            "Nombre_Doctor": "Dr. Miguel",
             "Apellidos": "Pérez García",
-            "folioDoctor": "FOL901"
+            "Folio_Doctor": "FOL901"
         },
         {
-            "nombreDoctor": "Dra. Paula",
+            "Nombre_Doctor": "Dra. Paula",
             "Apellidos": "Torres Díaz",
-            "folioDoctor": "FOL234"
+            "Folio_Doctor": "FOL234"
         },
         {
-            "nombreDoctor": "Dr. Daniel",
+            "Nombre_Doctor": "Dr. Daniel",
             "Apellidos": "Navarro Alonso",
-            "folioDoctor": "FOL567"
+            "Folio_Doctor": "FOL567"
         },
         {
-            "nombreDoctor": "Dra. Sofía",
+            "Nombre_Doctor": "Dra. Sofía",
             "Apellidos": "Jiménez Martín",
-            "folioDoctor": "FOL890"
+            "Folio_Doctor": "FOL890"
         },
         {
-            "nombreDoctor": "Dr. David",
+            "Nombre_Doctor": "Dr. David",
             "Apellidos": "García Sánchez",
-            "folioDoctor": "FOL123"
+            "Folio_Doctor": "FOL123"
         },
         {
-            "nombreDoctor": "Dra. Elena",
+            "Nombre_Doctor": "Dra. Elena",
             "Apellidos": "Martínez López",
-            "folioDoctor": "FOL456"
+            "Folio_Doctor": "FOL456"
         },
         {
-            "nombreDoctor": "Dr. Jorge",
+            "Nombre_Doctor": "Dr. Jorge",
             "Apellidos": "Hernández Pérez",
-            "folioDoctor": "FOL789"
+            "Folio_Doctor": "FOL789"
         },
         {
-            "nombreDoctor": "Dra. Carla",
+            "Nombre_Doctor": "Dra. Carla",
             "Apellidos": "Gómez Rodríguez",
-            "folioDoctor": "FOL012"
+            "Folio_Doctor": "FOL012"
         },
         {
-            "nombreDoctor": "Dr. Pablo",
+            "Nombre_Doctor": "Dr. Pablo",
             "Apellidos": "Ruiz Gutiérrez",
-            "folioDoctor": "FOL345"
+            "Folio_Doctor": "FOL345"
         },
         {
-            "nombreDoctor": "Dra. Marta",
+            "Nombre_Doctor": "Dra. Marta",
             "Apellidos": "Hernández Sánchez",
-            "folioDoctor": "FOL678"
+            "Folio_Doctor": "FOL678"
         },
         {
-            "nombreDoctor": "Dr. Sergio",
+            "Nombre_Doctor": "Dr. Sergio",
             "Apellidos": "García Pérez",
-            "folioDoctor": "FOL901"
+            "Folio_Doctor": "FOL901"
         },
         {
-            "nombreDoctor": "Dra. Carmen",
+            "Nombre_Doctor": "Dra. Carmen",
             "Apellidos": "González Torres",
-            "folioDoctor": "FOL234"
+            "Folio_Doctor": "FOL234"
         },
         {
-            "nombreDoctor": "Dr. Andrés",
+            "Nombre_Doctor": "Dr. Andrés",
             "Apellidos": "Martínez Navarro",
-            "folioDoctor": "FOL567"
+            "Folio_Doctor": "FOL567"
         },
         {
-            "nombreDoctor": "Dra. Patricia",
+            "Nombre_Doctor": "Dra. Patricia",
             "Apellidos": "Sánchez Jiménez",
-            "folioDoctor": "FOL890"
+            "Folio_Doctor": "FOL890"
         }
     ],
     "dbDateBook": [
@@ -734,121 +734,121 @@
             "Nombre": "Paracetamol",
             "Lote": "123456",
             "Cantidad": "50",
-            "fecha_vencimiento": "2024/04/10"
+            "Fecha_de_Vencimiento": "2024/04/10"
         },
         {
             "Nombre": "Ibuprofeno",
             "Lote": "789012",
             "Cantidad": "40",
-            "fecha_vencimiento": "2024/05/15"
+            "Fecha_de_Vencimiento": "2024/05/15"
         },
         {
             "Nombre": "Amoxicilina",
             "Lote": "345678",
             "Cantidad": "30",
-            "fecha_vencimiento": "2024/06/20"
+            "Fecha_de_Vencimiento": "2024/06/20"
         },
         {
             "Nombre": "Omeprazol",
             "Lote": "901234",
             "Cantidad": "60",
-            "fecha_vencimiento": "2024/07/25"
+            "Fecha_de_Vencimiento": "2024/07/25"
         },
         {
             "Nombre": "Ciprofloxacino",
             "Lote": "567890",
             "Cantidad": "20",
-            "fecha_vencimiento": "2024/08/30"
+            "Fecha_de_Vencimiento": "2024/08/30"
         },
         {
             "Nombre": "Loratadina",
             "Lote": "234567",
             "Cantidad": "70",
-            "fecha_vencimiento": "2024/09/05"
+            "Fecha_de_Vencimiento": "2024/09/05"
         },
         {
             "Nombre": "Dexametasona",
             "Lote": "890123",
             "Cantidad": "25",
-            "fecha_vencimiento": "2024/10/10"
+            "Fecha_de_Vencimiento": "2024/10/10"
         },
         {
             "Nombre": "Metformina",
             "Lote": "456789",
             "Cantidad": "55",
-            "fecha_vencimiento": "2024/11/15"
+            "Fecha_de_Vencimiento": "2024/11/15"
         },
         {
             "Nombre": "Clonazepam",
             "Lote": "012345",
             "Cantidad": "45",
-            "fecha_vencimiento": "2024/12/20"
+            "Fecha_de_Vencimiento": "2024/12/20"
         },
         {
             "Nombre": "Sertralina",
             "Lote": "678901",
             "Cantidad": "35",
-            "fecha_vencimiento": "2025/01/25"
+            "Fecha_de_Vencimiento": "2025/01/25"
         },
         {
             "Nombre": "Cetirizina",
             "Lote": "345678",
             "Cantidad": "65",
-            "fecha_vencimiento": "2025/02/28"
+            "Fecha_de_Vencimiento": "2025/02/28"
         },
         {
             "Nombre": "Atorvastatina",
             "Lote": "901234",
             "Cantidad": "15",
-            "fecha_vencimiento": "2025/03/05"
+            "Fecha_de_Vencimiento": "2025/03/05"
         },
         {
             "Nombre": "Fluoxetina",
             "Lote": "567890",
             "Cantidad": "75",
-            "fecha_vencimiento": "2025/04/10"
+            "Fecha_de_Vencimiento": "2025/04/10"
         },
         {
             "Nombre": "Losartan",
             "Lote": "234567",
             "Cantidad": "10",
-            "fecha_vencimiento": "2025/05/15"
+            "Fecha_de_Vencimiento": "2025/05/15"
         },
         {
             "Nombre": "Rosuvastatina",
             "Lote": "890123",
             "Cantidad": "80",
-            "fecha_vencimiento": "2025/06/20"
+            "Fecha_de_Vencimiento": "2025/06/20"
         },
         {
             "Nombre": "Tramadol",
             "Lote": "456789",
             "Cantidad": "22",
-            "fecha_vencimiento": "2025/07/25"
+            "Fecha_de_Vencimiento": "2025/07/25"
         },
         {
             "Nombre": "Ranitidina",
             "Lote": "012345",
             "Cantidad": "38",
-            "fecha_vencimiento": "2025/08/30"
+            "Fecha_de_Vencimiento": "2025/08/30"
         },
         {
             "Nombre": "Metronidazol",
             "Lote": "678901",
             "Cantidad": "42",
-            "fecha_vencimiento": "2025/09/05"
+            "Fecha_de_Vencimiento": "2025/09/05"
         },
         {
             "Nombre": "Pantoprazol",
             "Lote": "345678",
             "Cantidad": "27",
-            "fecha_vencimiento": "2025/10/10"
+            "Fecha_de_Vencimiento": "2025/10/10"
         },
         {
             "Nombre": "Furosemida",
             "Lote": "901234",
             "Cantidad": "18",
-            "fecha_vencimiento": "2025/11/15"
+            "Fecha_de_Vencimiento": "2025/11/15"
         }
     ]
 }

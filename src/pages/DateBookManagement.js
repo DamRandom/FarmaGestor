@@ -7,9 +7,9 @@ import AddButton from '../components/AddButton';
 import UpdateButton from '../components/UpdateButton';
 import data from '../data/data.json'
 import Pagination from '../components/Pagination'
+import { Footer } from '../components/Footer';
 
 const DateBookManagement = () => {
-
   const [itemList, setItemList] = useState([]);
 
   const formFields = [
@@ -19,38 +19,47 @@ const DateBookManagement = () => {
     { name: 'fecha_vencimiento', type: 'text', placeholder: 'Fecha Vencimiento' },
   ];
 
-  useEffect(() => {
-    setDateBook(data.dbDateBook);
-  },
-    []);
-
-  const [dateBook, setDateBook] = useState([]);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const indexOfLastElement = currentPage * itemsPerPage;
-  const indexOfFirstElement = indexOfLastElement - itemsPerPage;
+  const searchDefault = 'Nombre';
 
   const criteria = [
-    { criteria: 'Medicamento' },
+    { criteria: 'Nombre' },
     { criteria: 'Fecha de Vencimiento' },
   ];
+
+  const [search, setSearch] = useState({
+    field: 'Nombre',
+    value: ''
+  });
+
+  const { value, field } = search;
+
+  const [tableData, setTableData] = useState(data.dbDateBook);
+
+  useEffect(() => {
+    let res = data.dbDateBook
+    if (field === 'Nombre') res = data.dbDateBook.filter(({ Nombre }) => Nombre.includes(value));
+    else if (field === 'Fecha de Vencimiento') res = data.dbDateBook.filter(({ Fecha_de_Vencimiento }) => Fecha_de_Vencimiento.includes(value));
+    console.log(value, field)
+    setTableData(res);
+  }, [search]);
 
   const columns = [
     { header: 'Nombre', field: 'Nombre' },
     { header: 'Lote', field: 'Lote' },
     { header: 'Cantidad', field: 'Cantidad' },
-    { header: 'Fecha Vencimiento', field: 'fecha_vencimiento' },
+    { header: 'Fecha Vencimiento', field: 'Fecha_de_Vencimiento' },
     {
       header: 'Acciones',
       field: 'Acciones',
       render: (rowData) => (
-        <button>Modificar</button>
+        <>
+          <UpdateButton
+            itemType=""
+            item={rowData}
+            formFields={formFields}
+          />
+          <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
+        </>
       )
     },
     {
@@ -63,6 +72,16 @@ const DateBookManagement = () => {
     }
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const indexOfLastElement = currentPage * itemsPerPage;
+  const indexOfFirstElement = indexOfLastElement - itemsPerPage;
+
   const [selectedRows, setSelectedRows] = useState([]);
   const [show, setMostrar] = useState(false);
 
@@ -73,25 +92,28 @@ const DateBookManagement = () => {
 
   const handleConfirmDelete = () => {
     console.log('Medicamentos seleccionados para eliminar:', selectedRows);
+    setSelectedRows([]);
   };
 
   return (
     <div className='full-page'>
-      <HeadComponent titulo='Gestionar Libro de Vencimiento'
+      <HeadComponent
+        setSearch={setSearch}
         criteria={criteria}
+        searchDefault={searchDefault}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Libro de Vencimiento</h3>
         <GenericTable
-          data={dateBook
+          data={tableData
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((dateBook, index) => ({
-              ...dateBook,
+            .map((tableData, index) => ({
+              ...tableData,
               Acciones:
                 <div>
                   <UpdateButton
                     itemType=""
-                    item={dateBook}
+                    item={tableData}
                     formFields={formFields}
                   />
                 </div>,
@@ -100,26 +122,28 @@ const DateBookManagement = () => {
           columns={columns}
         />
         <Pagination
-          totalItems={dateBook.length}
+          totalItems={tableData.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </div>
       <div className="buttons">
         <AddButton
-          itemType="Lote"
+          itemType=""
           itemList={itemList}
           setItemList={setItemList}
-          formFields={formFields} />
-
+          formFields={formFields}
+        />
 
         <DeleteButton
-          item={dateBook}
-          setItem={setDateBook}
+          item={tableData}
+          setItem={setTableData}
           selectedItem={selectedRows}
           show={show}
-          onConfirmDelete={handleConfirmDelete} />
+          onConfirmDelete={handleConfirmDelete}
+        />
       </div>
+      <Footer className='userFooter' />
     </div>
   );
 }

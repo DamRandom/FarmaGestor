@@ -6,26 +6,38 @@ import AddButton from '../components/AddButton.js';
 import UpdateButton from '../components/UpdateButton.js';
 import data from '../data/data.json'
 import Pagination from '../components/Pagination.js'
+import { Footer } from '../components/Footer';
 
 const PatientManagement = () => {
   const [patients, setPatients] = useState([]);
 
-  useEffect(() => {
-    setPatients(data.dbPatients);
-  }, []);  
-
-
-  const [itemList, setItemList] = useState([]);
-
-  const handleConfirmDelete = () => {
-    console.log('Pacientes seleccionados para eliminar:', selectedRows);
-  };
+  const searchDefault = 'Nombre';
 
   const criteria = [
     { criteria: 'Nombre' },
     { criteria: 'Enfermedad' },
-    { criteria: 'Grupo de Medicamentos'}
+    { criteria: 'Grupo de Medicamentos' }
   ];
+
+  const [search, setSearch] = useState({
+    field: 'Nombre',
+    value: ''
+  });
+
+  const { value, field } = search;
+
+  const [tableData, setTableData] = useState(data.dbPatients);
+
+  useEffect(() => {
+    let res = data.dbPatients
+    if (field === 'Nombre') res = data.dbPatients.filter(({ Nombre }) => Nombre.includes(value));
+    else if (field === 'Enfermedades') res = data.dbPatients.filter(({ Enfermedades }) => Enfermedades.includes(value));
+    else if (field === 'Grupo de Medicamentos') res = data.dbPatients.filter(({ Medicamentos }) => Medicamentos.includes(value));
+    console.log(value, field)
+    setTableData(res);
+  }, [search]);
+
+  const [itemList, setItemList] = useState([]);
 
   const formFields = [
     { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
@@ -47,7 +59,14 @@ const PatientManagement = () => {
       header: 'Acciones',
       field: 'Acciones',
       render: (rowData) => (
-        <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
+        <>
+          <UpdateButton
+            itemType="Usuario"
+            item={rowData}
+            formFields={formFields}
+          />
+          <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
+        </>
       )
     },
     {
@@ -60,41 +79,48 @@ const PatientManagement = () => {
     }
   ];
 
-const [currentPage, setCurrentPage] = useState(1);
-const itemsPerPage = 5;
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
-const handlePageChange = (page) => {
-  setCurrentPage(page);
-};
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
-const indexOfLastElement = currentPage * itemsPerPage;
-const indexOfFirstElement = indexOfLastElement - itemsPerPage;
+  const indexOfLastElement = currentPage * itemsPerPage;
+  const indexOfFirstElement = indexOfLastElement - itemsPerPage;
 
-const [selectedRows, setSelectedRows] = useState([]);
-const [show, setShow] = useState(false);
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [show, setShow] = useState(false);
 
   const handleCheckboxChange = (index) => {
     setSelectedRows(selectedRows.includes(index) ? selectedRows.filter(row => row !== index) : [...selectedRows, index]);
     setShow(selectedRows.length === 0);
   };
 
+  const handleConfirmDelete = () => {
+    console.log('Pacientes seleccionados para eliminar:', selectedRows);
+    setSelectedRows([]);
+  };
+
   return (
     <div className='full-page'>
-      <HeadComponent title='Pacientes con Tarjetón'
+      <HeadComponent
+        setSearch={setSearch}
         criteria={criteria}
+        searchDefault={searchDefault}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Pacientes con Tarjetón</h3>
         <GenericTable
-          data={patients
+          data={tableData
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((patients, index) => ({
-              ...patients,
+            .map((tableData, index) => ({
+              ...tableData,
               Acciones:
                 <div>
                   <UpdateButton
                     itemType=""
-                    item={patients}
+                    item={tableData}
                     formFields={formFields}
                   />
                 </div>,
@@ -103,26 +129,28 @@ const [show, setShow] = useState(false);
           columns={columns}
         />
         <Pagination
-          totalItems={patients.length}
+          totalItems={tableData.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </div>
       <div className="buttons">
-        <AddButton 
-        itemType="Patients" 
-        itemList={itemList} 
-        setItemList={setItemList} 
-        formFields={formFields} 
+        <AddButton
+          itemType="Patients"
+          itemList={itemList}
+          setItemList={setItemList}
+          formFields={formFields}
         />
 
-        <DeleteButton 
-        item={patients} 
-        setItem={setPatients} 
-        selectedItem={selectedRows} 
-        show={show} 
-        onConfirmDelete={handleConfirmDelete} />
+        <DeleteButton
+          item={tableData}  
+          setItem={setTableData}
+          selectedItem={selectedRows}
+          show={show}
+          onConfirmDelete={handleConfirmDelete} 
+          />
       </div>
+      <Footer className='userFooter' />
     </div>
   );
 }

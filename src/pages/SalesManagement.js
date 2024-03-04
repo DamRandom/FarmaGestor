@@ -10,35 +10,7 @@ import data from '../data/data.json'
 import { Footer } from '../components/Footer';
 
 const SalesManagement = () => {
-
   const [itemList, setItemList] = useState([]);
-
-  useEffect(() => {
-    setTableData(data.dbSales);
-  },
-    []);
-
-    const criteria = [
-      { criteria: 'Medicamento' },
-      { criteria: 'Fecha' },
-    ];
-
-    //Save search fields and values into var.
-  const [search, setSearch] = useState({
-    field: 'nombre',
-    value: ''
-  });
-
-  const { value, field } = search;
-
-  const [tableData, setTableData] = useState(data.dbSales);
-
-  useEffect(() => {
-    let res = tableData
-    if (field === 'Medicamento') res = data.dbSales.filter(({ Medicamento }) => Medicamento.includes(value));
-    else if (field === 'Fecha') res = data.dbSales.filter(({ Fecha }) => Fecha.includes(value));
-    setTableData(res);
-  }, [search]);
 
   const formFields = [
     { name: 'Id Ventas', type: 'text', placeholder: 'ID Ventas' },
@@ -49,19 +21,49 @@ const SalesManagement = () => {
     { name: 'Importe', type: 'text', placeholder: 'Importe' },
   ];
 
+  const searchDefault = 'Medicamento';
+
+  const criteria = [
+    { criteria: 'Medicamentos' },
+    { criteria: 'Fecha' },
+  ];
+
+  const [search, setSearch] = useState({
+    field: 'Medicamentos',
+    value: ''
+  });
+
+  const { value, field } = search;
+
+  const [tableData, setTableData] = useState(data.dbSales);
+
+  useEffect(() => {
+    let res = data.dbSales
+    if (field === 'Medicamento') res = data.dbSales.filter(({ Medicamentos }) => Medicamentos.includes(value));
+    else if (field === 'Fecha') res = data.dbSales.filter(({ Fecha }) => Fecha.includes(value));
+    console.log(value, field)
+    setTableData(res);
+  }, [search]);
 
   const columns = [
     { header: 'ID Ventas', field: 'ID Ventas' },
     { header: 'Medicamentos', field: 'Medicamentos' },
-    { header: 'Cantidad Vendida', field: 'Cantidad Vendida' },
-    { header: 'Fecha de Vencimiento', field: 'Fecha de Vencimiento' },
+    { header: 'Cantidad Vendida', field: 'Cantidad_Vendida' },
+    { header: 'Fecha de Vencimiento', field: 'Fecha_de_Vencimiento' },
     { header: 'Lote', field: 'Lote' },
     { header: 'Importe', field: 'Importe' },
     {
       header: 'Acciones',
       field: 'Acciones',
       render: (rowData) => (
-        <button>Modificar</button>
+          <>
+            <UpdateButton
+              itemType=""
+              item={rowData}
+              formFields={formFields}
+            />
+            <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
+          </>
       )
     },
     {
@@ -98,13 +100,15 @@ const SalesManagement = () => {
 
   const handleConfirmDelete = () => {
     console.log('Usuarios seleccionados para eliminar:', selectedRows);
+    setSelectedRows([]);
   };
 
   return (
     <div className='full-page'>
       <HeadComponent
-      setSearch={setSearch}
+        setSearch={setSearch}
         criteria={criteria}
+        searchDefault={searchDefault}
       />
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Ventas</h3>
@@ -133,20 +137,21 @@ const SalesManagement = () => {
       </div>
       <div className="buttons">
         <AddButton
-          itemType="Ventas"
+          itemType=""
           itemList={itemList}
           setItemList={setItemList}
-          formFields={formFields} />
-
+          formFields={formFields}
+        />
 
         <DeleteButton
           item={tableData}
           setItem={setTableData}
           selectedItem={selectedRows}
           show={show}
-          onConfirmDelete={handleConfirmDelete} />
+          onConfirmDelete={handleConfirmDelete}
+        />
       </div>
-      <Footer className='userFooter'/>
+      <Footer className='userFooter' />
     </div>
   );
 }

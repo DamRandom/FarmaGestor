@@ -1,14 +1,11 @@
 import { useState } from "react";
 
-const SearchBar = ({ setSearch, criteria = [] }) => {
+const SearchBar = ({ searchDefault, setSearch, criteria = [] }) => {
 
     const [searchValues, setSearchValues] = useState({
-        field: 'Nombre',
+        field: searchDefault,
         value: ''
     });
-
-    const [reset, setReset] = useState(false);
-
 
     const handleInputChange = ({ target }) => {
         setSearchValues({

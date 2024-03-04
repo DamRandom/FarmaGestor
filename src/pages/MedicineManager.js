@@ -6,31 +6,10 @@ import AddButton from '../components/AddButton';
 import UpdateButton from '../components/UpdateButton';
 import Pagination from '../components/Pagination';
 import data from '../data/data.json';
+import { Footer } from '../components/Footer';
 
 const MedicineManager = () => {
-  const [medicine, setMedicine] = useState([]);
-
-  useEffect(() => {
-    setMedicine(data.dbMedicine);
-  }, []);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const indexOfLastElement = currentPage * itemsPerPage;
-  const indexOfFirstElement = indexOfLastElement - itemsPerPage;
-
-  const [itemList, setItemList] = useState([]); // Aquí creamos las variables itemList y setItemList
-
-  const criteria = [
-    { criteria: 'Nombre' },
-    { criteria: 'Grupo' },
-    { criteria: 'Estado' }
-  ];
+  const [itemList, setItemList] = useState([]);
 
   const formFields = [
     { name: 'Nombre', type: 'text', placeholder: 'Nombre' },
@@ -39,6 +18,32 @@ const MedicineManager = () => {
     { name: 'Precio', type: 'text', placeholder: 'Precio' },
     { name: 'Estado', type: 'text', placeholder: 'Estado' },
   ];
+
+  const searchDefault = 'Nombre';
+
+  const criteria = [
+    { criteria: 'Nombre' },
+    { criteria: 'Grupo' },
+    { criteria: 'Estado' }
+  ];
+
+  const [search, setSearch] = useState({
+    field: 'Nombre',
+    value: ''
+  });
+
+  const { value, field } = search;
+
+  const [tableData, setTableData] = useState(data.dbMedicine);
+
+  useEffect(() => { //TODO SearchBar
+    let res = data.dbMedicine
+    if (field === 'Nombre') res = data.dbMedicine.filter(({ Nombre }) => Nombre.includes(value));
+    else if (field === 'Grupo') res = data.dbMedicine.filter(({ Grupo }) => Grupo.includes(value));
+    else if (field === 'Estado') res = data.dbMedicine.filter(({ Estado }) => Estado.includes(value));
+    console.log(value, field)
+    setTableData(res);
+  }, [search]);
 
   const columns = [
     { header: 'Nombre', field: 'Nombre' },
@@ -50,30 +55,47 @@ const MedicineManager = () => {
       header: 'Acciones',
       field: 'Acciones',
       render: (rowData) => (
-        <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
+        <>
+          <UpdateButton
+            itemType=""
+            item={rowData}
+            formFields={formFields}
+          />
+          <button onClick={() => console.log(`Modificar ${rowData.Nombre}`)}>Modificar</button>
+        </>
       )
-    }
+    },
   ];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const indexOfLastElement = currentPage * itemsPerPage;
+  const indexOfFirstElement = indexOfLastElement - itemsPerPage;  
 
   return (
     <div className="full-page">
       <HeadComponent
+        setSearch={setSearch}
         criteria={criteria}
+        searchDefault={searchDefault}
       />
-
-      {/* Contenido de la página de administración de medicine */}
       <div className="container">
         <h3 className='titulo-tabla'>Listado de Medicamentos</h3>
         <GenericTable
-          data={medicine
+          data={tableData
             .slice(indexOfFirstElement, indexOfLastElement)
-            .map((medicine, index) => ({
-              ...medicine,
+            .map((tableData, index) => ({
+              ...tableData,
               Acciones:
               <div>
                 <UpdateButton
                   itemType=""
-                  item={medicine}
+                  item={tableData}
                   formFields={formFields}
                 />
               </div>
@@ -82,16 +104,14 @@ const MedicineManager = () => {
         />
 
         <Pagination
-          totalItems={medicine.length}
+          totalItems={tableData.length}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </div>
-
       <div className="buttons">
-
         <AddButton
-          itemType="Medicamento"
+          itemType=""
           itemList={itemList}
           setItemList={setItemList}
           formFields={formFields} />
